@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mold.22 — Commissioned objects for spaces with something to say</title>
+<link rel="stylesheet" href="ds/styles.css">
+<script src="ds/bundle.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Lora:ital,wght@0,400;0,600;1,400&amp;display=swap">
+<style>
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--color-bg);color:var(--color-text);overflow-x:hidden}
+a{color:var(--color-accent-700)}
+a:hover{color:var(--color-accent-600)}
+</style>
+</helmet>
+
+<header style="position:fixed; top:0; left:0; right:0; z-index:50; height:64px; display:flex; align-items:center; gap:var(--space-6); padding:0 clamp(20px,4vw,48px); background-color:var(--color-neutral-800); background-image:linear-gradient(color-mix(in srgb, var(--color-neutral-900) 26%, transparent), color-mix(in srgb, var(--color-neutral-900) 26%, transparent)), url(assets/nav-stripes-hd.jpg); background-size:100% 100%, auto 100%; background-repeat:no-repeat, repeat-x; background-position:0 0, left center; border-bottom:1px solid color-mix(in srgb, var(--color-neutral-900) 45%, transparent); box-shadow:var(--shadow-md);">
+  <a href="#top" aria-label="Mold.22 home" style="margin-right:auto; display:flex; align-items:center;"><img src="assets/mold22-logo-light.png" alt="Mold.22" style="height:20px; width:auto; filter:drop-shadow(0 1px 2px color-mix(in srgb, var(--color-neutral-900) 70%, transparent));"></a>
+  <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+    <nav style="display:flex; gap:var(--space-6); align-items:center;">
+      <a href="#services" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">Services</a>
+      <a href="#work" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">Work</a>
+      <a href="#process" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">Process</a>
+      <a href="#materials" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">Materials</a>
+      <a href="#faq" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">FAQ</a>
+      <a href="#contact" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">Contact</a>
+    </nav>
+    <a class="btn btn-primary" href="#dream" style="color:var(--color-bg); border-color:color-mix(in srgb, var(--color-bg) 80%, transparent);">Start a brief</a>
+  </sc-if>
+  <sc-if value="{{ isNarrow }}">
+    <button type="button" class="btn btn-secondary" onClick="{{ toggleMenu }}" aria-label="Menu" style="font-size:14px; gap:8px; color:var(--color-bg); border-color:color-mix(in srgb, var(--color-bg) 70%, transparent);">
+      {{ menuLabel }}
+      <svg viewBox="0 0 24 24" aria-hidden="true" style="width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round;"><path d="M4 8h16"></path><path d="M4 16h16"></path></svg>
+    </button>
+  </sc-if>
+</header>
+
+<sc-if value="{{ menuOpen }}">
+  <div style="position:fixed; top:64px; left:0; right:0; bottom:0; z-index:49; background:var(--color-bg); padding:var(--space-6) 20px; display:flex; flex-direction:column; overflow-y:auto;">
+    <a href="#services" onClick="{{ closeMenu }}" style="font-family:var(--font-heading); font-size:36px; color:var(--color-text); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">Services</a>
+    <a href="#work" onClick="{{ closeMenu }}" style="font-family:var(--font-heading); font-size:36px; color:var(--color-text); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">Work</a>
+    <a href="#process" onClick="{{ closeMenu }}" style="font-family:var(--font-heading); font-size:36px; color:var(--color-text); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">Process</a>
+    <a href="#dream" onClick="{{ closeMenu }}" style="font-family:var(--font-heading); font-size:36px; font-style:italic; color:var(--color-accent-700); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">Dream it</a>
+    <a href="#materials" onClick="{{ closeMenu }}" style="font-family:var(--font-heading); font-size:36px; color:var(--color-text); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">Materials</a>
+    <a href="#faq" onClick="{{ closeMenu }}" style="font-family:var(--font-heading); font-size:36px; color:var(--color-text); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">FAQ</a>
+    <a href="#contact" onClick="{{ closeMenu }}" style="font-family:var(--font-heading); font-size:36px; color:var(--color-text); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">Contact</a>
+  </div>
+</sc-if>
+
+<section id="top" data-screen-label="Hero" style="max-width:1440px; margin:0 auto; padding:calc(64px + clamp(36px,6vw,88px)) clamp(20px,5vw,72px) clamp(48px,6vw,96px);">
+  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:var(--space-3) var(--space-6); align-items:baseline; padding-bottom:var(--space-4); border-bottom:1px solid var(--color-divider);">
+    <div style="font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--color-text);">Commissioned objects for spaces with something to say</div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700);">
+      <span>One off pieces for brands</span><span style="width:4px; height:4px; border-radius:50%; background:var(--color-accent);"></span><span>Commercial spaces</span><span style="width:4px; height:4px; border-radius:50%; background:var(--color-accent);"></span><span>Homes</span><span style="width:4px; height:4px; border-radius:50%; background:var(--color-accent);"></span><span>Pop ups</span><span style="width:4px; height:4px; border-radius:50%; background:var(--color-accent);"></span><span>Events</span><span style="width:4px; height:4px; border-radius:50%; background:var(--color-accent);"></span><span>Gifts</span>
+    </div>
+  </div>
+
+  <h1 style="font-family:var(--font-heading); font-weight:300; font-size:clamp(44px,7.4vw,128px); line-height:.98; letter-spacing:-.02em; margin:clamp(28px,4vw,56px) 0 0; min-height:{{ h1Min }};">
+    <span style="display:block;">Dreaming of <em style="display:inline-block; font-style:italic; color:var(--color-accent-700); opacity:{{ heroOp }}; transform:translateY({{ heroTy }}px); transition:opacity .2s ease, transform .2s ease;">{{ heroObj }}</em></span>
+    <span style="display:block;">for <em style="display:inline-block; font-style:italic; color:var(--color-accent-700); opacity:{{ heroOp }}; transform:translateY({{ heroTy }}px); transition:opacity .2s ease .05s, transform .2s ease .05s;">{{ heroPlace }}</em>?</span>
+  </h1>
+
+  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:var(--space-6); margin-top:clamp(24px,3vw,40px);">
+    <p style="max-width:30em; font-size:17px; line-height:1.65; margin:0; color:var(--color-neutral-800); text-wrap:pretty;">You tell us what you want for your store, your restaurant, your home or your gift. We design it, make it and bring it to you.</p>
+    <div style="display:flex; gap:var(--space-3); flex-wrap:wrap;">
+      <a class="btn btn-primary" href="#dream" style="font-size:16px; padding:13px 20px;">Dream it up
+        <svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+      <a class="btn btn-secondary" href="#work" style="font-size:16px; padding:13px 20px;">See the work</a>
+    </div>
+  </div>
+
+  <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+  <div onMouseLeave="{{ slatOut }}" style="display:flex; gap:6px; height:clamp(320px,54svh,640px); margin-top:clamp(32px,4vw,56px);">
+    <div onMouseEnter="{{ slatIn.s0 }}" onClick="{{ slatIn.s0 }}" style="position:relative; min-width:0; flex:{{ slat.s0 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="./img_6005-mutqs86i-woh5.jpg" alt="Seating photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 96.1%;"></div>
+    <div onMouseEnter="{{ slatIn.s1 }}" onClick="{{ slatIn.s1 }}" style="position:relative; min-width:0; flex:{{ slat.s1 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/work-curves-store.jpg" alt="Stands photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 78.9%;"></div>
+    <div onMouseEnter="{{ slatIn.s2 }}" onClick="{{ slatIn.s2 }}" style="position:relative; min-width:0; flex:{{ slat.s2 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="./img_6303-mutqzstd-3doo.jpg" alt="Sculpture photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 96.3%;"></div>
+    <div onMouseEnter="{{ slatIn.s3 }}" onClick="{{ slatIn.s3 }}" style="position:relative; min-width:0; flex:{{ slat.s3 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/photo-gifts-table.jpg" alt="Gift photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:42% 58%;"></div>
+    <div onMouseEnter="{{ slatIn.s4 }}" onClick="{{ slatIn.s4 }}" style="position:relative; min-width:0; flex:{{ slat.s4 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/photo-events-h.webp" alt="Event photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 64.5%;"></div>
+    <div onMouseEnter="{{ slatIn.s5 }}" onClick="{{ slatIn.s5 }}" style="position:relative; min-width:0; flex:{{ slat.s5 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/photo-brand-sketch.jpg" alt="Brand piece sketch" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:62% 52%;"></div>
+  </div>
+  <div style="display:flex; justify-content:space-between; align-items:baseline; gap:var(--space-4); padding:var(--space-3) 0; border-bottom:1px solid var(--color-divider);">
+    <div style="display:flex; align-items:baseline; gap:var(--space-3); min-width:0;">
+      <span style="font-family:var(--font-heading); font-style:italic; font-size:22px; color:var(--color-accent-700); font-feature-settings:'tnum';">{{ heroNum }}</span>
+      <span style="font-family:var(--font-heading); font-size:22px;">{{ heroTitle }}</span>
+    </div>
+    <a href="{{ heroHref }}" style="flex:none; display:inline-flex; align-items:center; gap:6px; font-size:14px; text-decoration:none;">Explore
+      <svg viewBox="0 0 24 24" aria-hidden="true" style="width:15px; height:15px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
+    </a>
+  </div>
+  </sc-if>
+  <sc-if value="{{ isNarrow }}">
+    <div style="display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; margin:32px calc(-1 * clamp(20px,5vw,72px)) 0; padding:0 clamp(20px,5vw,72px) 12px; scrollbar-width:none; -webkit-overflow-scrolling:touch;">
+      <a href="#ch-seating" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
+        <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="./img_6005-mutqs86i-woh5.jpg" alt="Restaurant chairs and seating" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 50.0%;"></div>
+        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-accent-700); font-feature-settings:'tnum';">01</span><span style="font-family:var(--font-heading); font-size:20px;">Restaurant chairs &amp; seating</span></div>
+      </a>
+      <a href="#ch-stands" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
+        <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="assets/work-curves-store.jpg" alt="Store stands and displays" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 100.0%;"></div>
+        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-accent-700); font-feature-settings:'tnum';">02</span><span style="font-family:var(--font-heading); font-size:20px;">Store stands &amp; displays</span></div>
+      </a>
+      <a href="#ch-sculpture" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
+        <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="./img_6303-mutqzstd-3doo.jpg" alt="Home sculpture" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 100.0%;"></div>
+        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-accent-700); font-feature-settings:'tnum';">03</span><span style="font-family:var(--font-heading); font-size:20px;">Home sculpture</span></div>
+      </a>
+      <a href="#ch-gifts" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
+        <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="assets/photo-gifts-table.jpg" alt="Gift objects" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50% 58%;"></div>
+        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-accent-700); font-feature-settings:'tnum';">04</span><span style="font-family:var(--font-heading); font-size:20px;">Gift objects</span></div>
+      </a>
+      <a href="#ch-events" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
+        <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="assets/photo-events-h.webp" alt="Event pieces and pop-ups" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 50.0%;"></div>
+        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-accent-700); font-feature-settings:'tnum';">05</span><span style="font-family:var(--font-heading); font-size:20px;">Event pieces &amp; pop-ups</span></div>
+      </a>
+      <a href="#ch-brand" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
+        <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="assets/photo-brand-sketch.jpg" alt="One-off brand pieces" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50% 50%;"></div>
+        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-accent-700); font-feature-settings:'tnum';">06</span><span style="font-family:var(--font-heading); font-size:20px;">One-off brand pieces</span></div>
+      </a>
+    </div>
+    <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--color-neutral-700); padding-top:4px;">Swipe to see all six</div>
+  </sc-if>
+</section>
+
+<section id="about" data-screen-label="Manifesto" style="scroll-margin-top:64px;">
+  <div style="max-width:1440px; margin:0 auto; padding:clamp(56px,9vw,152px) clamp(20px,5vw,72px); display:flex; flex-wrap:wrap; gap:var(--space-6) clamp(32px,6vw,96px);">
+    <div style="flex:1 1 180px; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--color-accent-700); padding-top:.9em;">Manifesto</div>
+    <blockquote data-rv="man" style="flex:999 1 560px; margin:0; font-family:var(--font-heading); font-weight:300; font-size:clamp(26px,3.3vw,50px); line-height:1.22; letter-spacing:-.01em; text-wrap:pretty; opacity:{{ rv.man.op }}; transform:translateY({{ rv.man.ty }}px); transition:opacity 1s ease, transform 1s cubic-bezier(.2,.7,.2,1);">“We created <img src="assets/mold22-logo.png" alt="MOLD.22" style="display:inline-block; height:.58em; width:auto; vertical-align:baseline; margin:0 .12em;"> to bring bold ideas into physical form, pieces that give a space identity, presence, and character. We make furniture for homes, stands for pop ups, chairs for restaurants, statement pieces for stores, and objects that do not quite fit into a category. From the functional to the unexpected, every piece is designed with intention and made to belong to you. <em style="font-style:italic; color:var(--color-accent-700);">If you can dream it, we can shape it, build it, and bring it to life.</em>”</blockquote>
+  </div>
+</section>
+
+<section id="services" data-screen-label="Services" style="scroll-margin-top:64px; border-top:1px solid var(--color-divider);">
+  <div style="max-width:1440px; margin:0 auto; padding:clamp(56px,8vw,128px) clamp(20px,5vw,72px) clamp(32px,4vw,56px); display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:var(--space-6);">
+    <div style="flex:1 1 520px;">
+      <div style="font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--color-accent-700); margin-bottom:var(--space-3);">What we make</div>
+      <h2 style="font-weight:300; font-size:clamp(40px,5.6vw,92px); line-height:1; letter-spacing:-.02em; margin:0;">You tell us what you want. <em style="font-style:italic;">We make it.</em></h2>
+    </div>
+    <p style="flex:0 1 26em; font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; margin:0; color:var(--color-neutral-800);">Furniture, stands, objects and spaces, each one designed for a single client and made to fit the place it lives. Here are six places to start.</p>
+  </div>
+
+  <nav id="chapter-index" aria-label="Services" style="position:sticky; top:64px; z-index:20; background:var(--color-bg); border-top:1px solid var(--color-divider); border-bottom:1px solid var(--color-divider); display:flex; gap:clamp(20px,3vw,40px); overflow-x:auto; padding:0 clamp(20px,5vw,72px); scrollbar-width:none;">
+    <a href="#ch-seating" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:14px 0 13px; font-size:13px; text-decoration:none; white-space:nowrap; color:{{ ix.a0.c }}; border-bottom:1px solid {{ ix.a0.b }}; margin-bottom:-1px;"><span style="font-family:var(--font-heading); font-style:italic; font-size:16px; font-feature-settings:'tnum';">01</span>Seating</a>
+    <a href="#ch-stands" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:14px 0 13px; font-size:13px; text-decoration:none; white-space:nowrap; color:{{ ix.a1.c }}; border-bottom:1px solid {{ ix.a1.b }}; margin-bottom:-1px;"><span style="font-family:var(--font-heading); font-style:italic; font-size:16px; font-feature-settings:'tnum';">02</span>Stands</a>
+    <a href="#ch-sculpture" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:14px 0 13px; font-size:13px; text-decoration:none; white-space:nowrap; color:{{ ix.a2.c }}; border-bottom:1px solid {{ ix.a2.b }}; margin-bottom:-1px;"><span style="font-family:var(--font-heading); font-style:italic; font-size:16px; font-feature-settings:'tnum';">03</span>Sculpture</a>
+    <a href="#ch-gifts" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:14px 0 13px; font-size:13px; text-decoration:none; white-space:nowrap; color:{{ ix.a3.c }}; border-bottom:1px solid {{ ix.a3.b }}; margin-bottom:-1px;"><span style="font-family:var(--font-heading); font-style:italic; font-size:16px; font-feature-settings:'tnum';">04</span>Gifts</a>
+    <a href="#ch-events" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:14px 0 13px; font-size:13px; text-decoration:none; white-space:nowrap; color:{{ ix.a4.c }}; border-bottom:1px solid {{ ix.a4.b }}; margin-bottom:-1px;"><span style="font-family:var(--font-heading); font-style:italic; font-size:16px; font-feature-settings:'tnum';">05</span>Events &amp; pop-ups</a>
+    <a href="#ch-brand" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:14px 0 13px; font-size:13px; text-decoration:none; white-space:nowrap; color:{{ ix.a5.c }}; border-bottom:1px solid {{ ix.a5.b }}; margin-bottom:-1px;"><span style="font-family:var(--font-heading); font-style:italic; font-size:16px; font-feature-settings:'tnum';">06</span>Brand pieces</a>
+  </nav>
+
+  <div style="max-width:1440px; margin:0 auto; padding:0 clamp(20px,5vw,72px);">
+
+    <article id="ch-seating" data-chapter="0" data-screen-label="01 Seating" style="scroll-margin-top:112px; min-height:calc(100svh - 112px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,420px),1fr)); gap:clamp(32px,6vw,112px); align-items:center; align-content:center; padding:clamp(48px,7vw,112px) 0; border-bottom:1px solid var(--color-divider);">
+      <div data-rv="seating" style="display:flex; flex-direction:column; gap:var(--space-4); opacity:{{ rv.seating.op }}; transform:translateY({{ rv.seating.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
+        <div style="font-family:var(--font-heading); font-style:italic; font-weight:300; font-size:clamp(88px,12vw,190px); line-height:.8; color:var(--color-accent); font-feature-settings:'tnum';">01</div>
+        <div style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--color-accent-700);">For restaurants, cafés and bars</div>
+        <h3 style="font-weight:400; font-size:clamp(36px,4.4vw,64px); line-height:1.02; margin:0;">Restaurant chairs &amp; seating</h3>
+        <p style="font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; max-width:34em; margin:0;">Chairs, stools and banquettes drawn around your room, your menu and how long you want guests to stay. Made in the numbers you need and built for daily service.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:var(--space-2);">
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Dining chairs</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Bar stools</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Banquettes</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Terrace seating</span>
+        </div>
+        <div style="display:flex; margin-top:var(--space-2);"><a class="btn btn-primary" href="#dream" onClick="{{ dream.seating }}" style="font-size:15px; padding:12px 18px;">Dream one up <svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+      </div>
+      <div class="plate" style="position:relative; width:min(100%, 62svh); margin-inline:auto; aspect-ratio:4/5; overflow:hidden; clip-path:inset(0 0 {{ rv.seating.clip }}% 0); transition:clip-path 1.2s cubic-bezier(.6,0,.2,1);">
+        <img src="assets/photo-seating-c.webp" alt="Seating work" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 50.0%;">
+      </div>
+    </article>
+
+    <article id="ch-stands" data-chapter="1" data-screen-label="02 Stands" style="scroll-margin-top:112px; min-height:calc(100svh - 112px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,420px),1fr)); gap:clamp(32px,6vw,112px); align-items:center; align-content:center; padding:clamp(48px,7vw,112px) 0; border-bottom:1px solid var(--color-divider);">
+      <figure style="margin:0; display:flex; flex-direction:column; gap:var(--space-2);">
+        <div class="plate" style="position:relative; width:min(100%, 62svh); margin-inline:auto; aspect-ratio:4/5; overflow:hidden; clip-path:inset(0 0 {{ rv.stands.clip }}% 0); transition:clip-path 1.2s cubic-bezier(.6,0,.2,1);">
+          <img src="assets/work-curves-store.jpg" alt="Stands" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 50.0%;">
+        </div>
+        <figcaption style="font-size:12px; color:var(--color-neutral-700); margin:0;">Curved display stands for Sole.22 Footwear</figcaption>
+      </figure>
+      <div data-rv="stands" style="display:flex; flex-direction:column; gap:var(--space-4); opacity:{{ rv.stands.op }}; transform:translateY({{ rv.stands.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
+        <div style="font-family:var(--font-heading); font-style:italic; font-weight:300; font-size:clamp(88px,12vw,190px); line-height:.8; color:var(--color-accent); font-feature-settings:'tnum';">02</div>
+        <div style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--color-accent-700);">For shops, showrooms and brands</div>
+        <h3 style="font-weight:400; font-size:clamp(36px,4.4vw,64px); line-height:1.02; margin:0;">Store stands &amp; displays</h3>
+        <p style="font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; max-width:34em; margin:0;">Plinths, counters and display stands that hold your product the way your brand would. Sized to the product, finished to the interior, and built to be touched every day.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:var(--space-2);">
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Product plinths</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Counters</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Window displays</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Shelving</span>
+        </div>
+        <div style="display:flex; margin-top:var(--space-2);"><a class="btn btn-primary" href="#dream" onClick="{{ dream.stands }}" style="font-size:15px; padding:12px 18px;">Dream one up <svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+      </div>
+    </article>
+
+    <article id="ch-sculpture" data-chapter="2" data-screen-label="03 Sculpture" style="scroll-margin-top:112px; min-height:calc(100svh - 112px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,420px),1fr)); gap:clamp(32px,6vw,112px); align-items:center; align-content:center; padding:clamp(48px,7vw,112px) 0; border-bottom:1px solid var(--color-divider);">
+      <div data-rv="sculpture" style="display:flex; flex-direction:column; gap:var(--space-4); opacity:{{ rv.sculpture.op }}; transform:translateY({{ rv.sculpture.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
+        <div style="font-family:var(--font-heading); font-style:italic; font-weight:300; font-size:clamp(88px,12vw,190px); line-height:.8; color:var(--color-accent); font-feature-settings:'tnum';">03</div>
+        <div style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--color-accent-700);">For homes, gardens and collectors</div>
+        <h3 style="font-weight:400; font-size:clamp(36px,4.4vw,64px); line-height:1.02; margin:0;">Home sculpture</h3>
+        <p style="font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; max-width:34em; margin:0;">A piece for the hallway, the garden or the corner that has been waiting for one. Freestanding, wall-hung or tabletop, made at the scale of the room it belongs to.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:var(--space-2);">
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Freestanding</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Wall pieces</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Tabletop</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Garden</span>
+        </div>
+        <div style="display:flex; margin-top:var(--space-2);"><a class="btn btn-primary" href="#dream" onClick="{{ dream.sculpture }}" style="font-size:15px; padding:12px 18px;">Dream one up <svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+      </div>
+      <div class="plate" style="position:relative; width:min(100%, 62svh); margin-inline:auto; aspect-ratio:4/5; overflow:hidden; clip-path:inset(0 0 {{ rv.sculpture.clip }}% 0); transition:clip-path 1.2s cubic-bezier(.6,0,.2,1);">
+        <img src="assets/photo-sculpture-c.webp" alt="A sculpture" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 100.0%;">
+      </div>
+    </article>
+
+    <article id="ch-gifts" data-chapter="3" data-screen-label="04 Gifts" style="scroll-margin-top:112px; min-height:calc(100svh - 112px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,420px),1fr)); gap:clamp(32px,6vw,112px); align-items:center; align-content:center; padding:clamp(48px,7vw,112px) 0; border-bottom:1px solid var(--color-divider);">
+      <div class="plate" style="position:relative; width:min(100%, 62svh); margin-inline:auto; aspect-ratio:4/5; overflow:hidden; clip-path:inset(0 0 {{ rv.gifts.clip }}% 0); transition:clip-path 1.2s cubic-bezier(.6,0,.2,1);">
+        <img src="assets/photo-gifts-table.jpg" alt="A gift object" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50% 58%;">
+      </div>
+      <div data-rv="gifts" style="display:flex; flex-direction:column; gap:var(--space-4); opacity:{{ rv.gifts.op }}; transform:translateY({{ rv.gifts.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
+        <div style="font-family:var(--font-heading); font-style:italic; font-weight:300; font-size:clamp(88px,12vw,190px); line-height:.8; color:var(--color-accent); font-feature-settings:'tnum';">04</div>
+        <div style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--color-accent-700);">For friends, partners and clients</div>
+        <h3 style="font-weight:400; font-size:clamp(36px,4.4vw,64px); line-height:1.02; margin:0;">Gift objects</h3>
+        <p style="font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; max-width:34em; margin:0;">A one-of-one object made for one person. Bring us the story, the inside joke or the date, and we turn it into something they will keep.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:var(--space-2);">
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Birthdays</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Weddings</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Thank-yous</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Client gifts</span>
+        </div>
+        <div style="display:flex; margin-top:var(--space-2);"><a class="btn btn-primary" href="#dream" onClick="{{ dream.gifts }}" style="font-size:15px; padding:12px 18px;">Dream one up <svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+      </div>
+    </article>
+
+    <article id="ch-events" data-chapter="4" data-screen-label="05 Events &amp; pop-ups" style="scroll-margin-top:112px; min-height:calc(100svh - 112px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,420px),1fr)); gap:clamp(32px,6vw,112px); align-items:center; align-content:center; padding:clamp(48px,7vw,112px) 0; border-bottom:1px solid var(--color-divider);">
+      <div data-rv="events" style="display:flex; flex-direction:column; gap:var(--space-4); opacity:{{ rv.events.op }}; transform:translateY({{ rv.events.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
+        <div style="font-family:var(--font-heading); font-style:italic; font-weight:300; font-size:clamp(88px,12vw,190px); line-height:.8; color:var(--color-accent); font-feature-settings:'tnum';">05</div>
+        <div style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--color-accent-700);">For weddings, dinners, launches and brand events</div>
+        <h3 style="font-weight:400; font-size:clamp(36px,4.4vw,64px); line-height:1.02; margin:0;">Event pieces</h3>
+        <p style="font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; max-width:34em; margin:0;">Bars, centrepieces, signage and sets made for one night and remembered after. Built to be photographed and to survive the party.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:var(--space-2);">
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Bars</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Centrepieces</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Signage</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Photo sets</span>
+        </div>
+        <div style="display:flex; gap:var(--space-4); align-items:flex-start; border-top:1px solid var(--color-divider); padding-top:var(--space-4); margin-top:var(--space-2);">
+          <div class="plate" style="position:relative; flex:none; width:clamp(96px,10vw,140px); aspect-ratio:4/5; overflow:hidden;">
+            <img src="assets/work-pedestals-window.jpg" alt="Pop-up photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 50.0%;">
+          </div>
+          <div style="display:flex; flex-direction:column; gap:var(--space-2); min-width:0;">
+            <div style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--color-accent-700);">Including</div>
+            <h4 style="font-weight:400; font-size:clamp(24px,2.4vw,32px); line-height:1.1; margin:0;">Pop-up builds</h4>
+            <p style="font-size:15px; line-height:1.65; text-align:justify; hyphens:auto; margin:0;">Stands, counters and fixtures for a weekend, a month or a season. Designed to pack down, travel and set up again without losing their presence.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:var(--space-2);">
+              <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Market stalls</span>
+              <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Shop-in-shops</span>
+              <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Launch counters</span>
+              <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Modular kits</span>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:var(--space-3); margin-top:var(--space-2);"><a class="btn btn-primary" href="#dream" onClick="{{ dream.events }}" style="font-size:15px; padding:12px 18px;">Dream one up <svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><a class="btn btn-secondary" href="#dream" onClick="{{ dream.popups }}" style="font-size:15px; padding:12px 18px;">Dream a pop-up</a></div>
+      </div>
+      <div class="plate" style="position:relative; width:min(100%, 62svh); margin-inline:auto; aspect-ratio:4/5; overflow:hidden; clip-path:inset(0 0 {{ rv.events.clip }}% 0); transition:clip-path 1.2s cubic-bezier(.6,0,.2,1);">
+        <img src="assets/photo-events-c.webp" alt="An event piece" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 50.0%;">
+      </div>
+    </article>
+
+    <article id="ch-brand" data-chapter="5" data-screen-label="06 Brand pieces" style="scroll-margin-top:112px; min-height:calc(100svh - 112px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,420px),1fr)); gap:clamp(32px,6vw,112px); align-items:center; align-content:center; padding:clamp(48px,7vw,112px) 0;">
+      <div class="plate" style="position:relative; width:min(100%, 62svh); margin-inline:auto; aspect-ratio:4/5; overflow:hidden; clip-path:inset(0 0 {{ rv.brand.clip }}% 0); transition:clip-path 1.2s cubic-bezier(.6,0,.2,1);">
+        <img src="assets/photo-brand-h.webp" alt="A brand piece" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:89.8% 50.0%; transform:scale(1.128); transform-origin:50% 44%;">
+      </div>
+      <div data-rv="brand" style="display:flex; flex-direction:column; gap:var(--space-4); opacity:{{ rv.brand.op }}; transform:translateY({{ rv.brand.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
+        <div style="font-family:var(--font-heading); font-style:italic; font-weight:300; font-size:clamp(88px,12vw,190px); line-height:.8; color:var(--color-accent); font-feature-settings:'tnum';">06</div>
+        <div style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--color-accent-700);">For brands with something to say</div>
+        <h3 style="font-weight:400; font-size:clamp(36px,4.4vw,64px); line-height:1.02; margin:0;">One-off brand pieces</h3>
+        <p style="font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; max-width:34em; margin:0;">Objects that carry a brand in three dimensions: sculptural signage, trophies, window centrepieces and pieces that do not quite fit into a category.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:var(--space-2);">
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Sculptural signage</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Trophies</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Installations</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Window pieces</span>
+        </div>
+        <div style="display:flex; margin-top:var(--space-2);"><a class="btn btn-primary" href="#dream" onClick="{{ dream.brand }}" style="font-size:15px; padding:12px 18px;">Dream one up <svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="work" data-screen-label="Work" style="scroll-margin-top:64px; border-top:1px solid var(--color-divider);">
+  <div style="max-width:1440px; margin:0 auto; padding:clamp(56px,8vw,128px) clamp(20px,5vw,72px);">
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:var(--space-6); margin-bottom:clamp(40px,5vw,72px);">
+      <div style="flex:1 1 520px;">
+        <div style="font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--color-accent-700); margin-bottom:var(--space-3);">Selected work</div>
+        <h2 style="font-weight:300; font-size:clamp(40px,5.6vw,92px); line-height:1; letter-spacing:-.02em; margin:0;">From the drawing <em style="font-style:italic;">to the floor.</em></h2>
+      </div>
+      <p style="flex:0 1 26em; font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; margin:0; color:var(--color-neutral-800);">Every piece starts as a conversation and a 3D drawing. These are a few that made it off the screen and into the room.</p>
+    </div>
+
+    <div data-rv="w1" style="border-top:1px solid var(--color-divider); padding:var(--space-6) 0 clamp(48px,6vw,88px); opacity:{{ rv.w1.op }}; transform:translateY({{ rv.w1.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
+      <div style="display:flex; flex-wrap:wrap; gap:var(--space-3) var(--space-6); align-items:baseline; justify-content:space-between; margin-bottom:var(--space-4);">
+        <div style="display:flex; gap:var(--space-4); align-items:baseline;">
+          <span style="font-family:var(--font-heading); font-style:italic; font-size:32px; color:var(--color-accent); font-feature-settings:'tnum';">01</span>
+          <h3 style="font-weight:400; font-size:clamp(28px,3vw,44px); margin:0;">Curved display stands</h3>
+        </div>
+        <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--color-neutral-700);">Sole.22 Footwear · Store displays</div>
+      </div>
+      <p style="font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; max-width:40em; margin:0 0 var(--space-6);">Two freestanding display islands with curved, translucent screens and stepped plinths for shoes and bags. Modelled and rendered in 3D, then built and installed in the store.</p>
+      <div style="display:flex; gap:var(--space-4); overflow-x:auto; scroll-snap-type:x mandatory; padding:2px 2px var(--space-3); -webkit-overflow-scrolling:touch;">
+        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-sketch.jpg" alt="3D model of the stands on screen" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Sketch</figcaption>
+        </figure>
+        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-render.jpg" alt="Render of the two curved stands" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Rendered</figcaption>
+        </figure>
+        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-store.jpg" alt="The stands installed in the store" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Installed</figcaption>
+        </figure>
+        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-above.jpg" alt="The stands seen from above" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">From above</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div data-rv="w2" style="border-top:1px solid var(--color-divider); padding:var(--space-6) 0 clamp(48px,6vw,88px); opacity:{{ rv.w2.op }}; transform:translateY({{ rv.w2.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
+      <div style="display:flex; flex-wrap:wrap; gap:var(--space-3) var(--space-6); align-items:baseline; justify-content:space-between; margin-bottom:var(--space-4);">
+        <div style="display:flex; gap:var(--space-4); align-items:baseline;">
+          <span style="font-family:var(--font-heading); font-style:italic; font-size:32px; color:var(--color-accent); font-feature-settings:'tnum';">02</span>
+          <h3 style="font-weight:400; font-size:clamp(28px,3vw,44px); margin:0;">Tiled pedestals</h3>
+        </div>
+        <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--color-neutral-700);">Sole.22 Footwear · Window display</div>
+      </div>
+      <p style="font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; max-width:40em; margin:0 0 var(--space-6);">Three gridded pedestals at stepped heights, carrying the brand mark and the season’s shoes in the shop window.</p>
+      <div style="display:flex; gap:var(--space-4); overflow-x:auto; scroll-snap-type:x mandatory; padding:2px 2px var(--space-3); -webkit-overflow-scrolling:touch;">
+        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-pedestals-sketch.jpg" alt="Pencil sketch studies of the three tiled pedestals" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Sketch</figcaption>
+        </figure>
+        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="./b47f4006-1af6-4369-ae0e-413d0821eb7b-mutsn2n3-fqmz.jpg" alt="Render of three tiled pedestals" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Rendered</figcaption>
+        </figure>
+        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-pedestals-window.jpg" alt="The pedestals in the shop window with shoes" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">In the window</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div data-rv="w3" style="border-top:1px solid var(--color-divider); padding:var(--space-6) 0 0; opacity:{{ rv.w3.op }}; transform:translateY({{ rv.w3.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
+      <div style="display:flex; flex-wrap:wrap; gap:var(--space-3) var(--space-6); align-items:baseline; justify-content:space-between; margin-bottom:var(--space-4);">
+        <div style="display:flex; gap:var(--space-4); align-items:baseline;">
+          <span style="font-family:var(--font-heading); font-style:italic; font-size:32px; color:var(--color-accent); font-feature-settings:'tnum';">03</span>
+          <h3 style="font-weight:400; font-size:clamp(28px,3vw,44px); margin:0;">Podium side table</h3>
+        </div>
+        <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--color-neutral-700);">Commission · One-off object</div>
+      </div>
+      <p style="font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; max-width:40em; margin:0 0 var(--space-6);">A podium with a stained timber body, a dark top and an open shelf. Drawn to the centimetre, then finished in the workshop.</p>
+      <div style="display:flex; gap:var(--space-4); overflow-x:auto; scroll-snap-type:x mandatory; padding:2px 2px var(--space-3); -webkit-overflow-scrolling:touch;">
+        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-podium-drawing.jpg" alt="Measured 3D drawing of the podium" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Measured drawing</figcaption>
+        </figure>
+        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-podium-workshop.jpg" alt="The finished podium in the workshop" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Finished in the workshop</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process" data-screen-label="Process" style="scroll-margin-top:64px; border-top:1px solid var(--color-divider);">
+  <div style="max-width:1440px; margin:0 auto; padding:clamp(56px,8vw,128px) clamp(20px,5vw,72px);">
+    <div style="font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--color-accent-700); margin-bottom:var(--space-3);">How it works</div>
+    <h2 style="font-weight:300; font-size:clamp(40px,5.6vw,92px); line-height:1; letter-spacing:-.02em; margin:0 0 clamp(40px,5vw,72px); max-width:14em;">From the first idea <em style="font-style:italic;">to the finished piece.</em></h2>
+    <div data-rv="proc" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,240px),1fr)); gap:var(--space-6) clamp(24px,3vw,48px); opacity:{{ rv.proc.op }}; transform:translateY({{ rv.proc.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
+      <div style="border-top:1px solid var(--color-text); padding-top:var(--space-4); display:flex; flex-direction:column; gap:var(--space-3);">
+        <span style="font-family:var(--font-heading); font-style:italic; font-weight:300; font-size:64px; line-height:.9; color:var(--color-accent); font-feature-settings:'tnum';">01</span>
+        <h4 style="font-weight:400; font-size:28px; margin:0;">You tell us</h4>
+        <p style="font-size:15px; line-height:1.7; text-align:justify; hyphens:auto; margin:0; color:var(--color-neutral-800);">Share what you are imagining: a sketch, a photo, a feeling or just the room it is for. One sentence is enough to begin.</p>
+      </div>
+      <div style="border-top:1px solid var(--color-text); padding-top:var(--space-4); display:flex; flex-direction:column; gap:var(--space-3);">
+        <span style="font-family:var(--font-heading); font-style:italic; font-weight:300; font-size:64px; line-height:.9; color:var(--color-accent); font-feature-settings:'tnum';">02</span>
+        <h4 style="font-weight:400; font-size:28px; margin:0;">We draw it</h4>
+        <p style="font-size:15px; line-height:1.7; text-align:justify; hyphens:auto; margin:0; color:var(--color-neutral-800);">We come back with sketches, 3D drawings and material samples, together with a quote for the piece.</p>
+      </div>
+      <div style="border-top:1px solid var(--color-text); padding-top:var(--space-4); display:flex; flex-direction:column; gap:var(--space-3);">
+        <span style="font-family:var(--font-heading); font-style:italic; font-weight:300; font-size:64px; line-height:.9; color:var(--color-accent); font-feature-settings:'tnum';">03</span>
+        <h4 style="font-weight:400; font-size:28px; margin:0;">We make it</h4>
+        <p style="font-size:15px; line-height:1.7; text-align:justify; hyphens:auto; margin:0; color:var(--color-neutral-800);">Once you approve the drawings, the piece is made in our workshop. You get progress photos along the way.</p>
+      </div>
+      <div style="border-top:1px solid var(--color-text); padding-top:var(--space-4); display:flex; flex-direction:column; gap:var(--space-3);">
+        <span style="font-family:var(--font-heading); font-style:italic; font-weight:300; font-size:64px; line-height:.9; color:var(--color-accent); font-feature-settings:'tnum';">04</span>
+        <h4 style="font-weight:400; font-size:28px; margin:0;">We bring it to you</h4>
+        <p style="font-size:15px; line-height:1.7; text-align:justify; hyphens:auto; margin:0; color:var(--color-neutral-800);">We deliver and install, so the piece arrives where it belongs, ready to use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dream" data-screen-label="Dream it" style="scroll-margin-top:64px; background:color-mix(in srgb, var(--color-neutral-900) 78%, black); color:var(--color-bg);">
+  <div style="max-width:1440px; margin:0 auto; padding:clamp(72px,9vw,152px) clamp(20px,5vw,72px);">
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:var(--space-6);">
+      <div style="flex:1 1 520px;">
+        <div style="font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--color-accent-300); margin-bottom:var(--space-3);">Dream it</div>
+        <h2 style="font-weight:300; font-size:clamp(40px,5.6vw,92px); line-height:1; letter-spacing:-.02em; margin:0; color:var(--color-bg);">Write your brief <em style="font-style:italic;">in one sentence.</em></h2>
+      </div>
+      <p style="flex:0 1 24em; font-size:16px; line-height:1.7; margin:0; color:color-mix(in srgb, var(--color-bg) 74%, transparent);">Tap any gold word to change it. When it reads right, add your details and send it to us.</p>
+    </div>
+
+    <p style="font-family:var(--font-heading); font-weight:300; font-size:clamp(30px,4.2vw,66px); line-height:1.34; letter-spacing:-.01em; margin:clamp(40px,6vw,88px) 0; text-wrap:pretty; color:var(--color-bg);">I’m dreaming of <button type="button" onClick="{{ open.obj }}" style="font:inherit; font-style:italic; color:var(--color-accent-300); background:{{ bs.obj }}; border:0; border-bottom:1px solid var(--color-accent-400); border-radius:2px; padding:0 .1em; cursor:pointer; transition:background .25s;">{{ picks.obj }}</button> for <button type="button" onClick="{{ open.place }}" style="font:inherit; font-style:italic; color:var(--color-accent-300); background:{{ bs.place }}; border:0; border-bottom:1px solid var(--color-accent-400); border-radius:2px; padding:0 .1em; cursor:pointer; transition:background .25s;">{{ picks.place }}</button>, made from <button type="button" onClick="{{ open.material }}" style="font:inherit; font-style:italic; color:var(--color-accent-300); background:{{ bs.material }}; border:0; border-bottom:1px solid var(--color-accent-400); border-radius:2px; padding:0 .1em; cursor:pointer; transition:background .25s;">{{ picks.material }}</button>, that feels like <button type="button" onClick="{{ open.mood }}" style="font:inherit; font-style:italic; color:var(--color-accent-300); background:{{ bs.mood }}; border:0; border-bottom:1px solid var(--color-accent-400); border-radius:2px; padding:0 .1em; cursor:pointer; transition:background .25s;">{{ picks.mood }}</button>. I’d need <button type="button" onClick="{{ open.qty }}" style="font:inherit; font-style:italic; color:var(--color-accent-300); background:{{ bs.qty }}; border:0; border-bottom:1px solid var(--color-accent-400); border-radius:2px; padding:0 .1em; cursor:pointer; transition:background .25s;">{{ picks.qty }}</button>, <button type="button" onClick="{{ open.timing }}" style="font:inherit; font-style:italic; color:var(--color-accent-300); background:{{ bs.timing }}; border:0; border-bottom:1px solid var(--color-accent-400); border-radius:2px; padding:0 .1em; cursor:pointer; transition:background .25s;">{{ picks.timing }}</button>.</p>
+
+    <div style="border-top:1px solid color-mix(in srgb, var(--color-bg) 20%, transparent); padding-top:var(--space-6);">
+      <sc-if value="{{ notDetails }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:var(--space-3); margin-bottom:var(--space-4);">
+          <div style="display:flex; gap:var(--space-3); align-items:baseline;">
+            <span style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:color-mix(in srgb, var(--color-bg) 64%, transparent); font-feature-settings:'tnum';">Step {{ stepNum }} of 7</span>
+            <span style="font-family:var(--font-heading); font-size:26px; color:var(--color-bg);">{{ prompt }}</span>
+          </div>
+          <button type="button" onClick="{{ toDetails }}" class="btn btn-ghost" style="color:var(--color-accent-300); font-size:15px;">Skip to your details
+            <svg viewBox="0 0 24 24" aria-hidden="true" style="width:15px; height:15px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </button>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:var(--space-2);">
+          <sc-for list="{{ opts }}" as="o" hint-placeholder-count="8">
+            <button type="button" onClick="{{ o.pick }}" style="display:inline-flex; align-items:center; gap:12px; font-family:var(--font-body); font-size:15px; color:{{ o.color }}; background:{{ o.bg }}; border:1px solid {{ o.border }}; border-radius:var(--radius-md); padding:{{ o.pad }}; cursor:pointer; transition:border-color .2s, background .2s;" style-hover="border-color:var(--color-accent-400)">
+              
+              <span>{{ o.label }}</span>
+            </button>
+          </sc-for>
+          <sc-if value="{{ isMood }}">
+            <button type="button" onClick="{{ moodPick.m0 }}" style="display:inline-flex; align-items:center; gap:12px; font-family:var(--font-body); font-size:15px; color:{{ ms.m0.color }}; background:{{ ms.m0.bg }}; border:1px solid {{ ms.m0.border }}; border-radius:var(--radius-md); padding:6px 16px 6px 6px; cursor:pointer; transition:border-color .2s, background .2s;" style-hover="border-color:var(--color-accent-400)"><img src="assets/mood-arcs.jpg" alt="" style="width:48px; height:48px; object-fit:cover; border-radius:2px; filter:sepia(.22) saturate(.82) contrast(1.05);"><span>copper arcs</span></button>
+            <button type="button" onClick="{{ moodPick.m1 }}" style="display:inline-flex; align-items:center; gap:12px; font-family:var(--font-body); font-size:15px; color:{{ ms.m1.color }}; background:{{ ms.m1.bg }}; border:1px solid {{ ms.m1.border }}; border-radius:var(--radius-md); padding:6px 16px 6px 6px; cursor:pointer; transition:border-color .2s, background .2s;" style-hover="border-color:var(--color-accent-400)"><img src="assets/mood-butter.jpg" alt="" style="width:48px; height:48px; object-fit:cover; border-radius:2px; filter:sepia(.22) saturate(.82) contrast(1.05);"><span>butter swirls</span></button>
+            <button type="button" onClick="{{ moodPick.m2 }}" style="display:inline-flex; align-items:center; gap:12px; font-family:var(--font-body); font-size:15px; color:{{ ms.m2.color }}; background:{{ ms.m2.bg }}; border:1px solid {{ ms.m2.border }}; border-radius:var(--radius-md); padding:6px 16px 6px 6px; cursor:pointer; transition:border-color .2s, background .2s;" style-hover="border-color:var(--color-accent-400)"><img src="assets/mood-patchwork.jpg" alt="" style="width:48px; height:48px; object-fit:cover; border-radius:2px; filter:sepia(.22) saturate(.82) contrast(1.05);"><span>ochre patchwork</span></button>
+            <button type="button" onClick="{{ moodPick.m3 }}" style="display:inline-flex; align-items:center; gap:12px; font-family:var(--font-body); font-size:15px; color:{{ ms.m3.color }}; background:{{ ms.m3.bg }}; border:1px solid {{ ms.m3.border }}; border-radius:var(--radius-md); padding:6px 16px 6px 6px; cursor:pointer; transition:border-color .2s, background .2s;" style-hover="border-color:var(--color-accent-400)"><img src="assets/mood-plaid.jpg" alt="" style="width:48px; height:48px; object-fit:cover; border-radius:2px; filter:sepia(.22) saturate(.82) contrast(1.05);"><span>plum plaid</span></button>
+            <button type="button" onClick="{{ moodPick.m4 }}" style="display:inline-flex; align-items:center; gap:12px; font-family:var(--font-body); font-size:15px; color:{{ ms.m4.color }}; background:{{ ms.m4.bg }}; border:1px solid {{ ms.m4.border }}; border-radius:var(--radius-md); padding:6px 16px 6px 6px; cursor:pointer; transition:border-color .2s, background .2s;" style-hover="border-color:var(--color-accent-400)"><img src="assets/mood-stripes.jpg" alt="" style="width:48px; height:48px; object-fit:cover; border-radius:2px; filter:sepia(.22) saturate(.82) contrast(1.05);"><span>painted stripes</span></button>
+            <button type="button" onClick="{{ moodPick.m5 }}" style="display:inline-flex; align-items:center; gap:12px; font-family:var(--font-body); font-size:15px; color:{{ ms.m5.color }}; background:{{ ms.m5.bg }}; border:1px solid {{ ms.m5.border }}; border-radius:var(--radius-md); padding:6px 16px 6px 6px; cursor:pointer; transition:border-color .2s, background .2s;" style-hover="border-color:var(--color-accent-400)"><img src="assets/mood-blocks.jpg" alt="" style="width:48px; height:48px; object-fit:cover; border-radius:2px; filter:sepia(.22) saturate(.82) contrast(1.05);"><span>wool blocks</span></button>
+            <button type="button" onClick="{{ moodPick.m6 }}" style="display:inline-flex; align-items:center; gap:12px; font-family:var(--font-body); font-size:15px; color:{{ ms.m6.color }}; background:{{ ms.m6.bg }}; border:1px solid {{ ms.m6.border }}; border-radius:var(--radius-md); padding:6px 16px 6px 6px; cursor:pointer; transition:border-color .2s, background .2s;" style-hover="border-color:var(--color-accent-400)"><img src="assets/mood-dots.jpg" alt="" style="width:48px; height:48px; object-fit:cover; border-radius:2px; filter:sepia(.22) saturate(.82) contrast(1.05);"><span>confetti dots</span></button>
+            <button type="button" onClick="{{ moodPick.m7 }}" style="display:inline-flex; align-items:center; gap:12px; font-family:var(--font-body); font-size:15px; color:{{ ms.m7.color }}; background:{{ ms.m7.bg }}; border:1px solid {{ ms.m7.border }}; border-radius:var(--radius-md); padding:6px 16px 6px 6px; cursor:pointer; transition:border-color .2s, background .2s;" style-hover="border-color:var(--color-accent-400)"><img src="assets/mood-pebbles.jpg" alt="" style="width:48px; height:48px; object-fit:cover; border-radius:2px; filter:sepia(.22) saturate(.82) contrast(1.05);"><span>blue and olive</span></button>
+            <button type="button" onClick="{{ moodPick.m8 }}" style="display:inline-flex; align-items:center; gap:12px; font-family:var(--font-body); font-size:15px; color:{{ ms.m8.color }}; background:{{ ms.m8.bg }}; border:1px solid {{ ms.m8.border }}; border-radius:var(--radius-md); padding:6px 16px 6px 6px; cursor:pointer; transition:border-color .2s, background .2s;" style-hover="border-color:var(--color-accent-400)"><img src="assets/mood-signal.jpg" alt="" style="width:48px; height:48px; object-fit:cover; border-radius:2px; filter:sepia(.22) saturate(.82) contrast(1.05);"><span>signal red</span></button>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ showForm }}">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:var(--space-3); margin-bottom:var(--space-4);">
+          <div style="display:flex; gap:var(--space-3); align-items:baseline;">
+            <span style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:color-mix(in srgb, var(--color-bg) 64%, transparent); font-feature-settings:'tnum';">Step 7 of 7</span>
+            <span style="font-family:var(--font-heading); font-size:26px; color:var(--color-bg);">Where should we reply?</span>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,240px),1fr)); gap:var(--space-4);">
+          <label style="display:flex; flex-direction:column; gap:6px; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:color-mix(in srgb, var(--color-bg) 70%, transparent);">Name
+            <input class="input" type="text" autocomplete="name" value="{{ name }}" onChange="{{ onName }}" style="font-size:16px; min-height:46px; color:var(--color-bg); border-color:color-mix(in srgb, var(--color-bg) 30%, transparent); letter-spacing:0; text-transform:none;">
+          </label>
+          <label style="display:flex; flex-direction:column; gap:6px; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:color-mix(in srgb, var(--color-bg) 70%, transparent);">Email
+            <input class="input" type="email" autocomplete="email" value="{{ email }}" onChange="{{ onEmail }}" style="font-size:16px; min-height:46px; color:var(--color-bg); border-color:color-mix(in srgb, var(--color-bg) 30%, transparent); letter-spacing:0; text-transform:none;">
+          </label>
+          <label style="display:flex; flex-direction:column; gap:6px; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:color-mix(in srgb, var(--color-bg) 70%, transparent);">Phone or WhatsApp
+            <input class="input" type="tel" autocomplete="tel" value="{{ phone }}" onChange="{{ onPhone }}" style="font-size:16px; min-height:46px; color:var(--color-bg); border-color:color-mix(in srgb, var(--color-bg) 30%, transparent); letter-spacing:0; text-transform:none;">
+          </label>
+        </div>
+        <label style="display:flex; flex-direction:column; gap:6px; margin-top:var(--space-4); font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:color-mix(in srgb, var(--color-bg) 70%, transparent);">Anything else? Sizes, links, references
+          <textarea class="input" rows="4" value="{{ notes }}" onChange="{{ onNotes }}" style="font-size:16px; color:var(--color-bg); border-color:color-mix(in srgb, var(--color-bg) 30%, transparent); letter-spacing:0; text-transform:none;"></textarea>
+        </label>
+        <sc-if value="{{ hasErr }}"><p style="margin:var(--space-3) 0 0; font-size:14px; color:var(--color-accent-300);">{{ err }}</p></sc-if>
+        <div style="display:flex; flex-wrap:wrap; gap:var(--space-3); margin-top:var(--space-6); align-items:center;">
+          <button type="button" class="btn btn-primary" onClick="{{ onSend }}" style="font-size:16px; padding:13px 22px; color:var(--color-accent-300); border-color:var(--color-accent-400);">Send my brief</button>
+          <a class="btn btn-secondary" href="{{ mailHref }}" style="font-size:15px; padding:12px 18px; color:var(--color-bg); border-color:color-mix(in srgb, var(--color-bg) 30%, transparent);">
+            <svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            Send by email</a>
+          <a class="btn btn-secondary" href="{{ waHref }}" target="_blank" rel="noopener" style="font-size:15px; padding:12px 18px; color:var(--color-bg); border-color:color-mix(in srgb, var(--color-bg) 30%, transparent);">
+            <svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+            Send on WhatsApp</a>
+          <button type="button" class="btn btn-ghost" onClick="{{ open.obj }}" style="color:var(--color-accent-300); font-size:15px;">Edit the sentence</button>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ showThanks }}">
+        <div style="display:flex; flex-direction:column; gap:var(--space-3); max-width:40em;">
+          <span style="font-family:var(--font-heading); font-style:italic; font-weight:300; font-size:clamp(36px,4vw,56px); line-height:1.1; color:var(--color-accent-300);">Thank you{{ thanksName }}.</span>
+          <p style="margin:0; font-size:16px; line-height:1.7; color:color-mix(in srgb, var(--color-bg) 80%, transparent);">Your brief is with us. We will reply to {{ replyTo }} with first thoughts and questions.</p>
+          <div style="display:flex; margin-top:var(--space-2);"><button type="button" class="btn btn-ghost" onClick="{{ restart }}" style="color:var(--color-accent-300); font-size:15px;">Dream up another piece</button></div>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<section id="materials" data-screen-label="Materials" style="scroll-margin-top:64px;">
+  <div style="max-width:1440px; margin:0 auto; padding:clamp(56px,8vw,128px) clamp(20px,5vw,72px);">
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:var(--space-6); margin-bottom:clamp(40px,5vw,72px);">
+      <div style="flex:1 1 520px;">
+        <div style="font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--color-accent-700); margin-bottom:var(--space-3);">Materials</div>
+        <h2 style="font-weight:300; font-size:clamp(40px,5.6vw,92px); line-height:1; letter-spacing:-.02em; margin:0;">What we <em style="font-style:italic;">work with.</em></h2>
+      </div>
+      <p style="flex:0 1 24em; font-size:16px; line-height:1.7; margin:0; color:var(--color-neutral-800);">Most pieces combine two or three. If yours needs something that is not on the list, ask us.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,260px),1fr)); column-gap:clamp(24px,3vw,48px);">
+      <div style="border-top:1px solid var(--color-divider); padding:var(--space-4) 0 var(--space-6);"><h4 style="font-weight:400; font-size:26px; margin:0 0 6px;">Solid timber</h4><p style="margin:0; font-size:14.5px; line-height:1.6; color:var(--color-neutral-700);">Oak, ash, beech and walnut, oiled, stained or lacquered.</p></div>
+      <div style="border-top:1px solid var(--color-divider); padding:var(--space-4) 0 var(--space-6);"><h4 style="font-weight:400; font-size:26px; margin:0 0 6px;">Lacquer &amp; paint</h4><p style="margin:0; font-size:14.5px; line-height:1.6; color:var(--color-neutral-700);">Any colour, matched to your brand or your room.</p></div>
+      <div style="border-top:1px solid var(--color-divider); padding:var(--space-4) 0 var(--space-6);"><h4 style="font-weight:400; font-size:26px; margin:0 0 6px;">Metal</h4><p style="margin:0; font-size:14.5px; line-height:1.6; color:var(--color-neutral-700);">Steel, aluminium and brass, bent, welded or brushed.</p></div>
+      <div style="border-top:1px solid var(--color-divider); padding:var(--space-4) 0 var(--space-6);"><h4 style="font-weight:400; font-size:26px; margin:0 0 6px;">Stone</h4><p style="margin:0; font-size:14.5px; line-height:1.6; color:var(--color-neutral-700);">Marble, travertine and terrazzo for tops and bases.</p></div>
+      <div style="border-top:1px solid var(--color-divider); padding:var(--space-4) 0 var(--space-6);"><h4 style="font-weight:400; font-size:26px; margin:0 0 6px;">Acrylic &amp; resin</h4><p style="margin:0; font-size:14.5px; line-height:1.6; color:var(--color-neutral-700);">Translucent screens, cast forms and coloured blocks.</p></div>
+      <div style="border-top:1px solid var(--color-divider); padding:var(--space-4) 0 var(--space-6);"><h4 style="font-weight:400; font-size:26px; margin:0 0 6px;">Upholstery</h4><p style="margin:0; font-size:14.5px; line-height:1.6; color:var(--color-neutral-700);">Fabrics, leathers and bouclé for seating.</p></div>
+      <div style="border-top:1px solid var(--color-divider); padding:var(--space-4) 0 var(--space-6);"><h4 style="font-weight:400; font-size:26px; margin:0 0 6px;">Tile &amp; ceramic</h4><p style="margin:0; font-size:14.5px; line-height:1.6; color:var(--color-neutral-700);">Gridded surfaces, glazes and mosaics.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" data-screen-label="FAQ" style="scroll-margin-top:64px; border-top:1px solid var(--color-divider);">
+  <div style="max-width:1440px; margin:0 auto; padding:clamp(56px,8vw,128px) clamp(20px,5vw,72px); display:flex; flex-wrap:wrap; gap:var(--space-6) clamp(32px,6vw,96px);">
+    <div style="flex:1 1 280px;">
+      <div style="font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--color-accent-700); margin-bottom:var(--space-3);">FAQ</div>
+      <h2 style="font-weight:300; font-size:clamp(40px,5vw,80px); line-height:1; letter-spacing:-.02em; margin:0;">Good <em style="font-style:italic;">questions.</em></h2>
+    </div>
+    <div style="flex:999 1 560px; border-bottom:1px solid var(--color-divider);">
+      <div style="border-top:1px solid var(--color-divider);">
+        <button type="button" onClick="{{ faqT.q0 }}" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:var(--space-4); background:transparent; border:0; padding:var(--space-4) 0; cursor:pointer; text-align:left; font-family:var(--font-heading); font-size:clamp(22px,2.2vw,28px); font-weight:400; color:var(--color-text);" style-hover="color:var(--color-accent-700)">How much does a custom piece cost?<svg viewBox="0 0 24 24" aria-hidden="true" style="flex:none; width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; transform:rotate({{ faqR.q0 }}); transition:transform .3s;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button>
+        <sc-if value="{{ faqO.q0 }}"><p style="margin:0; padding:0 0 var(--space-4); max-width:38em; font-size:16px; line-height:1.7; color:var(--color-neutral-800);">It depends on size, material and quantity. After the first conversation we send drawings with a quote, so you know the price before anything is made.</p></sc-if>
+      </div>
+      <div style="border-top:1px solid var(--color-divider);">
+        <button type="button" onClick="{{ faqT.q1 }}" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:var(--space-4); background:transparent; border:0; padding:var(--space-4) 0; cursor:pointer; text-align:left; font-family:var(--font-heading); font-size:clamp(22px,2.2vw,28px); font-weight:400; color:var(--color-text);" style-hover="color:var(--color-accent-700)">How long does it take?<svg viewBox="0 0 24 24" aria-hidden="true" style="flex:none; width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; transform:rotate({{ faqR.q1 }}); transition:transform .3s;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button>
+        <sc-if value="{{ faqO.q1 }}"><p style="margin:0; padding:0 0 var(--space-4); max-width:38em; font-size:16px; line-height:1.7; color:var(--color-neutral-800);">A single piece usually takes a few weeks from approved drawings. Larger runs, like seating for a whole restaurant, are scheduled with you at the start.</p></sc-if>
+      </div>
+      <div style="border-top:1px solid var(--color-divider);">
+        <button type="button" onClick="{{ faqT.q2 }}" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:var(--space-4); background:transparent; border:0; padding:var(--space-4) 0; cursor:pointer; text-align:left; font-family:var(--font-heading); font-size:clamp(22px,2.2vw,28px); font-weight:400; color:var(--color-text);" style-hover="color:var(--color-accent-700)">Can I bring my own sketch or reference?<svg viewBox="0 0 24 24" aria-hidden="true" style="flex:none; width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; transform:rotate({{ faqR.q2 }}); transition:transform .3s;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button>
+        <sc-if value="{{ faqO.q2 }}"><p style="margin:0; padding:0 0 var(--space-4); max-width:38em; font-size:16px; line-height:1.7; color:var(--color-neutral-800);">Yes. A napkin sketch, a photo, a moodboard or a single word all work. We turn it into measured drawings.</p></sc-if>
+      </div>
+      <div style="border-top:1px solid var(--color-divider);">
+        <button type="button" onClick="{{ faqT.q3 }}" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:var(--space-4); background:transparent; border:0; padding:var(--space-4) 0; cursor:pointer; text-align:left; font-family:var(--font-heading); font-size:clamp(22px,2.2vw,28px); font-weight:400; color:var(--color-text);" style-hover="color:var(--color-accent-700)">Do you make more than one of something?<svg viewBox="0 0 24 24" aria-hidden="true" style="flex:none; width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; transform:rotate({{ faqR.q3 }}); transition:transform .3s;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button>
+        <sc-if value="{{ faqO.q3 }}"><p style="margin:0; padding:0 0 var(--space-4); max-width:38em; font-size:16px; line-height:1.7; color:var(--color-neutral-800);">Yes. We make one-offs and small runs, from a single gift to seating for a full room.</p></sc-if>
+      </div>
+      <div style="border-top:1px solid var(--color-divider);">
+        <button type="button" onClick="{{ faqT.q4 }}" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:var(--space-4); background:transparent; border:0; padding:var(--space-4) 0; cursor:pointer; text-align:left; font-family:var(--font-heading); font-size:clamp(22px,2.2vw,28px); font-weight:400; color:var(--color-text);" style-hover="color:var(--color-accent-700)">Will I see it before it is made?<svg viewBox="0 0 24 24" aria-hidden="true" style="flex:none; width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; transform:rotate({{ faqR.q4 }}); transition:transform .3s;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button>
+        <sc-if value="{{ faqO.q4 }}"><p style="margin:0; padding:0 0 var(--space-4); max-width:38em; font-size:16px; line-height:1.7; color:var(--color-neutral-800);">You approve 3D drawings and material samples before production starts, and we send progress photos from the workshop.</p></sc-if>
+      </div>
+      <div style="border-top:1px solid var(--color-divider);">
+        <button type="button" onClick="{{ faqT.q5 }}" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:var(--space-4); background:transparent; border:0; padding:var(--space-4) 0; cursor:pointer; text-align:left; font-family:var(--font-heading); font-size:clamp(22px,2.2vw,28px); font-weight:400; color:var(--color-text);" style-hover="color:var(--color-accent-700)">Do you deliver and install?<svg viewBox="0 0 24 24" aria-hidden="true" style="flex:none; width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; transform:rotate({{ faqR.q5 }}); transition:transform .3s;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button>
+        <sc-if value="{{ faqO.q5 }}"><p style="margin:0; padding:0 0 var(--space-4); max-width:38em; font-size:16px; line-height:1.7; color:var(--color-neutral-800);">Yes, we deliver and install. For pieces travelling further, we arrange crating and shipping.</p></sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact" data-screen-label="Contact" style="scroll-margin-top:64px; background:color-mix(in srgb, var(--color-neutral-900) 78%, black); color:var(--color-bg);">
+  <div style="max-width:1440px; margin:0 auto; padding:clamp(72px,9vw,152px) clamp(20px,5vw,72px) var(--space-6);">
+    <div style="font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--color-accent-300); margin-bottom:var(--space-3);">Contact</div>
+    <h2 style="font-weight:300; font-size:clamp(44px,7vw,120px); line-height:.98; letter-spacing:-.02em; margin:0 0 clamp(40px,6vw,88px); color:var(--color-bg); max-width:12em;">Tell us what <em style="font-style:italic; color:var(--color-accent-300);">you’re dreaming of.</em></h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,260px),1fr)); column-gap:clamp(24px,3vw,48px);">
+      <a href="{{ mailto }}" style="display:flex; flex-direction:column; gap:6px; padding:var(--space-4) 0 var(--space-6); border-top:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent); color:var(--color-bg); text-decoration:none;" style-hover="color:var(--color-accent-300)">
+        <span style="display:flex; justify-content:space-between; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:color-mix(in srgb, var(--color-bg) 64%, transparent);">Email<svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span>
+        <span style="font-family:var(--font-heading); font-size:26px; overflow-wrap:anywhere;">{{ emailText }}</span>
+      </a>
+      <a href="{{ igHref }}" target="_blank" rel="noopener" style="display:flex; flex-direction:column; gap:6px; padding:var(--space-4) 0 var(--space-6); border-top:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent); color:var(--color-bg); text-decoration:none;" style-hover="color:var(--color-accent-300)">
+        <span style="display:flex; justify-content:space-between; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:color-mix(in srgb, var(--color-bg) 64%, transparent);">Instagram<svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span>
+        <span style="font-family:var(--font-heading); font-size:26px;">@{{ igText }}</span>
+      </a>
+      <a href="{{ waLink }}" target="_blank" rel="noopener" style="display:flex; flex-direction:column; gap:6px; padding:var(--space-4) 0 var(--space-6); border-top:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent); color:var(--color-bg); text-decoration:none;" style-hover="color:var(--color-accent-300)">
+        <span style="display:flex; justify-content:space-between; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:color-mix(in srgb, var(--color-bg) 64%, transparent);">WhatsApp<svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span>
+        <span style="font-family:var(--font-heading); font-size:26px; font-feature-settings:'tnum';">{{ waText }}</span>
+      </a>
+      <a href="{{ bookHref }}" target="_blank" rel="noopener" style="display:flex; flex-direction:column; gap:6px; padding:var(--space-4) 0 var(--space-6); border-top:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent); color:var(--color-bg); text-decoration:none;" style-hover="color:var(--color-accent-300)">
+        <span style="display:flex; justify-content:space-between; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:color-mix(in srgb, var(--color-bg) 64%, transparent);">Book a call<svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span>
+        <span style="font-family:var(--font-heading); font-size:26px;">Pick a time to talk</span>
+      </a>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:var(--space-4); margin-top:clamp(48px,6vw,96px); padding-top:var(--space-4); border-top:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent);">
+      <img src="assets/mold22-logo-light.png" alt="Mold.22" style="height:22px; width:auto;">
+      <span style="font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:color-mix(in srgb, var(--color-bg) 64%, transparent);">Commissioned objects for spaces with something to say</span>
+      <div style="display:flex; gap:var(--space-6); align-items:center; font-size:13px; color:color-mix(in srgb, var(--color-bg) 64%, transparent);">
+        <span>© 2026 Mold.22</span>
+        <a href="#top" style="color:var(--color-bg); text-decoration:none;" style-hover="color:var(--color-accent-300)">Back to top ↑</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;email&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;hana.kghazi@gmail.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;instagram&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;mold22.co&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;+20 1064778304&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;bookingUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://cal.com/mold.22&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;heroSeconds&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:3,&quot;min&quot;:1.5,&quot;max&quot;:8,&quot;step&quot;:0.5,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  SV = [
+    { key: 'seating', n: '01', title: 'Restaurant chairs & seating', ho: 'a chair', hp: 'your restaurant', obj: 'a set of chairs', place: 'my restaurant' },
+    { key: 'stands', n: '02', title: 'Store stands & displays', ho: 'a stand', hp: 'your store', obj: 'a display stand', place: 'my store' },
+    { key: 'sculpture', n: '03', title: 'Home sculpture', ho: 'a sculpture', hp: 'your home', obj: 'a sculpture', place: 'my home' },
+    { key: 'gifts', n: '04', title: 'Gift objects', ho: 'a gift', hp: 'a friend', obj: 'a gift', place: 'a friend' },
+    { key: 'events', n: '05', title: 'Event pieces & pop-ups', ho: 'a centrepiece', hp: 'your event', obj: 'a centrepiece', place: 'my event' },
+    { key: 'brand', n: '06', title: 'One-off brand pieces', ho: 'a one-off piece', hp: 'your brand', obj: 'a one-off piece', place: 'my brand' }
+  ];
+  STEPS = ['obj', 'place', 'material', 'mood', 'qty', 'timing'];
+  PROMPTS = { obj: 'What is it?', place: 'Where will it live?', material: 'What should it be made from?', mood: 'How should it feel?', qty: 'How many?', timing: 'When do you need it?' };
+  OPTS = {
+    obj: ['a chair', 'a set of chairs', 'a stool', 'a table', 'a display stand', 'a counter', 'a sculpture', 'a shelf', 'a gift', 'a pop-up stand', 'a centrepiece', 'a one-off piece', 'something new'],
+    place: ['my restaurant', 'my café', 'my store', 'my home', 'my hotel', 'my office', 'my launch', 'my event', 'my brand', 'a friend'],
+    material: ['wood', 'lacquered wood', 'metal', 'stone', 'acrylic', 'resin', 'fabric', 'tile', 'a mix', 'whatever suits it'],
+    mood: [
+      { label: 'copper arcs', img: 'assets/mood-arcs.jpg' },
+      { label: 'butter swirls', img: 'assets/mood-butter.jpg' },
+      { label: 'ochre patchwork', img: 'assets/mood-patchwork.jpg' },
+      { label: 'plum plaid', img: 'assets/mood-plaid.jpg' },
+      { label: 'painted stripes', img: 'assets/mood-stripes.jpg' },
+      { label: 'wool blocks', img: 'assets/mood-blocks.jpg' },
+      { label: 'confetti dots', img: 'assets/mood-dots.jpg' },
+      { label: 'blue and olive', img: 'assets/mood-pebbles.jpg' },
+      { label: 'signal red', img: 'assets/mood-signal.jpg' }
+    ],
+    qty: ['just one', 'a pair', 'a handful', 'ten to fifty', 'more than fifty'],
+    timing: ['as soon as possible', 'within two to three months', 'by the end of the season', 'whenever it’s ready']
+  };
+  RV = ['man', 'seating', 'stands', 'sculpture', 'gifts', 'events', 'brand', 'w1', 'w2', 'w3', 'proc'];
+
+  state = {
+    w: typeof window !== 'undefined' ? window.innerWidth : 1280,
+    hero: 0, heroFade: false, heroHold: false,
+    menu: false, chapter: 0, rv: {}, scrolled: false, faq: -1,
+    picks: { obj: 'a set of chairs', place: 'my restaurant', material: 'wood', mood: 'copper arcs', qty: 'a handful', timing: 'within two to three months' },
+    step: 'obj', name: '', email: '', phone: '', notes: '', sent: false, err: ''
+  };
+
+  componentDidMount() {
+    this._resize = () => this.setState({ w: window.innerWidth });
+    this._scroll = () => {
+      if (this._raf) return;
+      this._raf = requestAnimationFrame(() => { this._raf = null; this.measure(); });
+    };
+    window.addEventListener('resize', this._resize);
+    document.addEventListener('scroll', this._scroll, { capture: true, passive: true });
+    this.loop();
+    this._m = setTimeout(() => this.measure(), 80);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._resize);
+    document.removeEventListener('scroll', this._scroll, { capture: true });
+    clearTimeout(this._tick); clearTimeout(this._f); clearTimeout(this._m); clearTimeout(this._hold);
+  }
+  loop() {
+    const secs = Math.max(1.5, Number(this.props.heroSeconds ?? 3));
+    this._tick = setTimeout(() => {
+      if ((this.props.motion ?? true) && !this.state.heroHold) this.setHero((this.state.hero + 1) % this.SV.length);
+      this.loop();
+    }, secs * 1000);
+  }
+  setHero(i) {
+    this._target = i;
+    if (i === this.state.hero) return;
+    this.setState({ heroFade: true });
+    clearTimeout(this._f);
+    this._f = setTimeout(() => this.setState({ hero: i, heroFade: false }), 200);
+  }
+  measure() {
+    const vh = window.innerHeight || 800;
+    const rv = { ...this.state.rv };
+    let changed = false;
+    document.querySelectorAll('[data-rv]').forEach(el => {
+      const k = el.getAttribute('data-rv');
+      if (!rv[k] && el.getBoundingClientRect().top < vh * 0.88) { rv[k] = true; changed = true; }
+    });
+    let ch = 0;
+    document.querySelectorAll('[data-chapter]').forEach((el, i) => { if (el.getBoundingClientRect().top < vh * 0.5) ch = i; });
+    const top = document.getElementById('top');
+    const scrolled = top ? top.getBoundingClientRect().top < -8 : false;
+    if (ch !== this.state.chapter) {
+      const nav = document.getElementById('chapter-index');
+      const link = nav && nav.children[ch];
+      if (nav && link && nav.scrollWidth > nav.clientWidth) nav.scrollTo({ left: Math.max(0, link.offsetLeft - 24), behavior: 'smooth' });
+    }
+    if (changed || ch !== this.state.chapter || scrolled !== this.state.scrolled) this.setState({ rv, chapter: ch, scrolled });
+  }
+  pick(k, v) {
+    const i = this.STEPS.indexOf(k);
+    this.setState(st => ({ picks: { ...st.picks, [k]: v }, step: i < this.STEPS.length - 1 ? this.STEPS[i + 1] : 'details', err: '' }));
+  }
+  brief() {
+    const p = this.state.picks;
+    return `I'm dreaming of ${p.obj} for ${p.place}, made from ${p.material}, that feels like ${p.mood}. I'd need ${p.qty}, ${p.timing}.`;
+  }
+  fullBrief() {
+    const s = this.state;
+    let t = this.brief();
+    if (s.notes.trim()) t += `\n\n${s.notes.trim()}`;
+    const who = [s.name.trim(), s.email.trim(), s.phone.trim()].filter(Boolean).join(' · ');
+    if (who) t += `\n\n${who}`;
+    return t;
+  }
+
+  renderVals() {
+    const s = this.state, p = this.props;
+    const motion = p.motion ?? true;
+    const narrow = s.w < 820;
+    const H = this.SV[s.hero];
+
+    const slat = {}, slatIn = {}, slatTap = {}, ix = {}, dream = {};
+    this.SV.forEach((sv, i) => {
+      slat['s' + i] = i === s.hero ? (narrow ? 9 : 7) : 1;
+      slatIn['s' + i] = () => { this.setState({ heroHold: true }); this.setHero(i); };
+      slatTap['s' + i] = (e) => {
+        if (this._target !== i || this.state.hero !== i) {
+          e.preventDefault();
+          this.setState({ heroHold: true });
+          this.setHero(i);
+          clearTimeout(this._hold);
+          this._hold = setTimeout(() => this.setState({ heroHold: false }), 6000);
+        }
+      };
+      const a = i === s.chapter;
+      ix['a' + i] = { c: a ? 'var(--color-accent-700)' : 'var(--color-neutral-700)', b: a ? 'var(--color-accent)' : 'transparent' };
+      dream[sv.key] = () => this.setState(st => ({ picks: { ...st.picks, obj: sv.obj, place: sv.place }, step: 'material', sent: false, err: '' }));
+    });
+
+    dream.popups = () => this.setState(st => ({ picks: { ...st.picks, obj: 'a pop-up stand', place: 'my launch' }, step: 'material', sent: false, err: '' }));
+
+    const rv = {};
+    this.RV.forEach(k => {
+      const on = !motion || !!s.rv[k];
+      rv[k] = { op: on ? 1 : 0, ty: on ? 0 : 32, clip: on ? 0 : 100 };
+    });
+
+    const faqO = {}, faqT = {}, faqR = {};
+    for (let i = 0; i < 6; i++) {
+      const open = s.faq === i;
+      faqO['q' + i] = open;
+      faqR['q' + i] = open ? '45deg' : '0deg';
+      faqT['q' + i] = () => this.setState(st => ({ faq: st.faq === i ? -1 : i }));
+    }
+
+    const step = s.step;
+    const isDetails = step === 'details';
+    const bs = {}, open = {};
+    this.STEPS.forEach(k => {
+      bs[k] = k === step ? 'color-mix(in srgb, var(--color-accent) 26%, transparent)' : 'transparent';
+      open[k] = () => this.setState({ step: k, sent: false, err: '' });
+    });
+    const isMood = step === 'mood';
+    const moodPick = {}, ms = {};
+    this.OPTS.mood.forEach((o, i) => {
+      const sel = s.picks.mood === o.label;
+      moodPick['m' + i] = () => this.pick('mood', o.label);
+      ms['m' + i] = { color: sel ? 'var(--color-accent-300)' : 'var(--color-bg)', border: sel ? 'var(--color-accent-400)' : 'color-mix(in srgb, var(--color-bg) 26%, transparent)', bg: sel ? 'color-mix(in srgb, var(--color-accent) 16%, transparent)' : 'transparent' };
+    });
+    const opts = (isDetails || isMood) ? [] : this.OPTS[step].map(o => {
+      const label = typeof o === 'string' ? o : o.label;
+      const img = typeof o === 'string' ? '' : o.img;
+      const sel = s.picks[step] === label;
+      return {
+        label, img, hasImg: !!img,
+        color: sel ? 'var(--color-accent-300)' : 'var(--color-bg)',
+        border: sel ? 'var(--color-accent-400)' : 'color-mix(in srgb, var(--color-bg) 26%, transparent)',
+        bg: sel ? 'color-mix(in srgb, var(--color-accent) 16%, transparent)' : 'transparent',
+        pad: img ? '6px 16px 6px 6px' : '11px 16px',
+        pick: () => this.pick(step, label)
+      };
+    });
+
+    const email = (p.email || 'hana.kghazi@gmail.com').trim();
+    const ig = (p.instagram || 'mold22.co').replace(/^@/, '').trim();
+    const wa = (p.whatsapp || '+20 1064778304').trim();
+    const waDigits = wa.replace(/\D/g, '');
+    const book = (p.bookingUrl || 'https://cal.com/mold.22').trim();
+    const fb = this.fullBrief();
+    const enc = encodeURIComponent;
+
+    return {
+      isWide: !narrow, isNarrow: narrow,
+      menuOpen: narrow && s.menu, menuLabel: s.menu ? 'Close' : 'Menu',
+      toggleMenu: () => this.setState(st => ({ menu: !st.menu })),
+      closeMenu: () => this.setState({ menu: false }),
+      navLine: s.scrolled ? 'var(--color-divider)' : 'transparent',
+
+      heroObj: H.ho, heroPlace: H.hp, heroNum: H.n, heroTitle: H.title, heroHref: '#ch-' + H.key,
+      heroOp: s.heroFade ? 0 : 1, heroTy: s.heroFade ? 10 : 0,
+      h1Min: narrow ? '4.1em' : '2.05em',
+      slat, slatIn, slatTap,
+      slatOut: () => this.setState({ heroHold: false }),
+
+      rv, ix, dream, faqO, faqT, faqR,
+
+      picks: s.picks, bs, open, opts, isMood, moodPick, ms,
+      notDetails: !isDetails,
+      showForm: isDetails && !s.sent,
+      showThanks: isDetails && s.sent,
+      stepNum: this.STEPS.indexOf(step) + 1,
+      prompt: this.PROMPTS[step] || '',
+      toDetails: () => this.setState({ step: 'details', sent: false }),
+      name: s.name, email: s.email, phone: s.phone, notes: s.notes,
+      onName: e => this.setState({ name: e.target.value }),
+      onEmail: e => this.setState({ email: e.target.value, err: '' }),
+      onPhone: e => this.setState({ phone: e.target.value, err: '' }),
+      onNotes: e => this.setState({ notes: e.target.value }),
+      hasErr: !!s.err, err: s.err,
+      onSend: () => {
+        if (!s.email.trim() && !s.phone.trim()) return this.setState({ err: 'Add an email or a phone number so we can reply.' });
+        this.setState({ sent: true });
+      },
+      restart: () => this.setState({ step: 'obj', sent: false, notes: '' }),
+      thanksName: s.name.trim() ? ', ' + s.name.trim().split(' ')[0] : '',
+      replyTo: s.email.trim() || s.phone.trim() || 'you',
+      mailHref: `mailto:${email}?subject=${enc('A brief for Mold.22')}&body=${enc(fb)}`,
+      waHref: `https://wa.me/${waDigits}?text=${enc(fb)}`,
+
+      mailto: `mailto:${email}`, emailText: email,
+      igHref: `https://instagram.com/${ig}`, igText: ig,
+      waLink: `https://wa.me/${waDigits}`, waText: wa,
+      bookHref: book
+    };
+  }
+}
+</script>
+</body>
+</html>
