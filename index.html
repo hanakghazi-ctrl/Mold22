@@ -26,14 +26,14 @@ a:hover{color:var(--color-accent-600)}
   <a href="#top" aria-label="Mold.22 home" style="margin-right:auto; display:flex; align-items:center;"><img src="assets/mold22-logo-light.png" alt="Mold.22" style="height:20px; width:auto; filter:drop-shadow(0 1px 2px color-mix(in srgb, var(--color-neutral-900) 70%, transparent));"></a>
   <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
     <nav style="display:flex; gap:var(--space-6); align-items:center;">
-      <a href="#services" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">Services</a>
+      <a href="#services" onClick="{{ openSvc.all }}" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">Services</a>
       <a href="#work" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">Work</a>
       <a href="#process" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">Process</a>
       <a href="#materials" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">Materials</a>
       <a href="#faq" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">FAQ</a>
       <a href="#contact" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">Contact</a>
     </nav>
-    <a class="btn btn-primary" href="#dream" style="color:var(--color-bg); border-color:color-mix(in srgb, var(--color-bg) 80%, transparent);">Start a brief</a>
+    <a class="btn btn-primary" href="#dream" style="white-space:nowrap; flex:none; color:var(--color-bg); border-color:color-mix(in srgb, var(--color-bg) 80%, transparent);">Start a brief</a>
   </sc-if>
   <sc-if value="{{ isNarrow }}">
     <button type="button" class="btn btn-secondary" onClick="{{ toggleMenu }}" aria-label="Menu" style="font-size:14px; gap:8px; color:var(--color-bg); border-color:color-mix(in srgb, var(--color-bg) 70%, transparent);">
@@ -45,7 +45,7 @@ a:hover{color:var(--color-accent-600)}
 
 <sc-if value="{{ menuOpen }}">
   <div style="position:fixed; top:64px; left:0; right:0; bottom:0; z-index:49; background:var(--color-bg); padding:var(--space-6) 20px; display:flex; flex-direction:column; overflow-y:auto;">
-    <a href="#services" onClick="{{ closeMenu }}" style="font-family:var(--font-heading); font-size:36px; color:var(--color-text); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">Services</a>
+    <a href="#services" onClick="{{ openSvc.all }}" style="font-family:var(--font-heading); font-size:36px; color:var(--color-text); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">Services</a>
     <a href="#work" onClick="{{ closeMenu }}" style="font-family:var(--font-heading); font-size:36px; color:var(--color-text); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">Work</a>
     <a href="#process" onClick="{{ closeMenu }}" style="font-family:var(--font-heading); font-size:36px; color:var(--color-text); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">Process</a>
     <a href="#dream" onClick="{{ closeMenu }}" style="font-family:var(--font-heading); font-size:36px; font-style:italic; color:var(--color-accent-700); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">Dream it</a>
@@ -71,55 +71,55 @@ a:hover{color:var(--color-accent-600)}
   <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:var(--space-6); margin-top:clamp(24px,3vw,40px);">
     <p style="max-width:30em; font-size:17px; line-height:1.65; margin:0; color:var(--color-neutral-800); text-wrap:pretty;">You tell us what you want for your store, your restaurant, your home or your gift. We design it, make it and bring it to you.</p>
     <div style="display:flex; gap:var(--space-3); flex-wrap:wrap;">
-      <a class="btn btn-primary" href="#dream" style="font-size:16px; padding:13px 20px;">Dream it up
+      <a class="btn btn-primary" href="#dream" style="white-space:nowrap; font-size:16px; padding:13px 20px;">Dream it up
         <svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
       </a>
-      <a class="btn btn-secondary" href="#work" style="font-size:16px; padding:13px 20px;">See the work</a>
+      <a class="btn btn-secondary" href="#work" style="white-space:nowrap; font-size:16px; padding:13px 20px;">See the work</a>
     </div>
   </div>
 
   <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
   <div onMouseLeave="{{ slatOut }}" style="display:flex; gap:6px; height:clamp(320px,54svh,640px); margin-top:clamp(32px,4vw,56px);">
-    <div onMouseEnter="{{ slatIn.s0 }}" onClick="{{ slatIn.s0 }}" style="position:relative; min-width:0; flex:{{ slat.s0 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="./img_6005-mutqs86i-woh5.jpg" alt="Seating photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 96.1%;"></div>
-    <div onMouseEnter="{{ slatIn.s1 }}" onClick="{{ slatIn.s1 }}" style="position:relative; min-width:0; flex:{{ slat.s1 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/work-curves-store.jpg" alt="Stands photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 78.9%;"></div>
-    <div onMouseEnter="{{ slatIn.s2 }}" onClick="{{ slatIn.s2 }}" style="position:relative; min-width:0; flex:{{ slat.s2 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="./img_6303-mutqzstd-3doo.jpg" alt="Sculpture photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 96.3%;"></div>
-    <div onMouseEnter="{{ slatIn.s3 }}" onClick="{{ slatIn.s3 }}" style="position:relative; min-width:0; flex:{{ slat.s3 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/photo-gifts-table.jpg" alt="Gift photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:42% 58%;"></div>
-    <div onMouseEnter="{{ slatIn.s4 }}" onClick="{{ slatIn.s4 }}" style="position:relative; min-width:0; flex:{{ slat.s4 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/photo-events-h.webp" alt="Event photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 64.5%;"></div>
-    <div onMouseEnter="{{ slatIn.s5 }}" onClick="{{ slatIn.s5 }}" style="position:relative; min-width:0; flex:{{ slat.s5 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/photo-brand-sketch.jpg" alt="Brand piece sketch" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:62% 52%;"></div>
+    <div onMouseEnter="{{ slatIn.s0 }}" onClick="{{ slatGo.s0 }}" style="position:relative; cursor:pointer; min-width:0; flex:{{ slat.s0 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="./img_6005-mutqs86i-woh5.jpg" alt="Seating photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 96.1%;"></div>
+    <div onMouseEnter="{{ slatIn.s1 }}" onClick="{{ slatGo.s1 }}" style="position:relative; cursor:pointer; min-width:0; flex:{{ slat.s1 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/work-curves-store.jpg" alt="Stands photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 78.9%;"></div>
+    <div onMouseEnter="{{ slatIn.s2 }}" onClick="{{ slatGo.s2 }}" style="position:relative; cursor:pointer; min-width:0; flex:{{ slat.s2 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="./img_6303-mutqzstd-3doo.jpg" alt="Sculpture photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 96.3%;"></div>
+    <div onMouseEnter="{{ slatIn.s3 }}" onClick="{{ slatGo.s3 }}" style="position:relative; cursor:pointer; min-width:0; flex:{{ slat.s3 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/podium-studio.jpg" alt="Podium side table" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50% 55%;"></div>
+    <div onMouseEnter="{{ slatIn.s4 }}" onClick="{{ slatGo.s4 }}" style="position:relative; cursor:pointer; min-width:0; flex:{{ slat.s4 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/photo-events-h.webp" alt="Event photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 64.5%;"></div>
+    <div onMouseEnter="{{ slatIn.s5 }}" onClick="{{ slatGo.s5 }}" style="position:relative; cursor:pointer; min-width:0; flex:{{ slat.s5 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/photo-brand-sketch.jpg" alt="Brand piece sketch" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:62% 52%;"></div>
   </div>
   <div style="display:flex; justify-content:space-between; align-items:baseline; gap:var(--space-4); padding:var(--space-3) 0; border-bottom:1px solid var(--color-divider);">
     <div style="display:flex; align-items:baseline; gap:var(--space-3); min-width:0;">
       <span style="font-family:var(--font-heading); font-style:italic; font-size:22px; color:var(--color-accent-700); font-feature-settings:'tnum';">{{ heroNum }}</span>
       <span style="font-family:var(--font-heading); font-size:22px;">{{ heroTitle }}</span>
     </div>
-    <a href="{{ heroHref }}" style="flex:none; display:inline-flex; align-items:center; gap:6px; font-size:14px; text-decoration:none;">Explore
+    <a href="{{ heroHref }}" onClick="{{ heroGo }}" style="flex:none; display:inline-flex; align-items:center; gap:6px; font-size:14px; text-decoration:none;">Explore
       <svg viewBox="0 0 24 24" aria-hidden="true" style="width:15px; height:15px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
     </a>
   </div>
   </sc-if>
   <sc-if value="{{ isNarrow }}">
     <div style="display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; margin:32px calc(-1 * clamp(20px,5vw,72px)) 0; padding:0 clamp(20px,5vw,72px) 12px; scrollbar-width:none; -webkit-overflow-scrolling:touch;">
-      <a href="#ch-seating" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
-        <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="./img_6005-mutqs86i-woh5.jpg" alt="Restaurant chairs and seating" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 50.0%;"></div>
-        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-accent-700); font-feature-settings:'tnum';">01</span><span style="font-family:var(--font-heading); font-size:20px;">Restaurant chairs &amp; seating</span></div>
+      <a href="#ch-seating" onClick="{{ openSvc.seating }}" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
+        <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="./img_6005-mutqs86i-woh5.jpg" alt="Furniture pieces" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 50.0%;"></div>
+        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-accent-700); font-feature-settings:'tnum';">01</span><span style="font-family:var(--font-heading); font-size:20px;">Furniture pieces</span></div>
       </a>
-      <a href="#ch-stands" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
+      <a href="#ch-stands" onClick="{{ openSvc.stands }}" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
         <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="assets/work-curves-store.jpg" alt="Store stands and displays" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 100.0%;"></div>
         <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-accent-700); font-feature-settings:'tnum';">02</span><span style="font-family:var(--font-heading); font-size:20px;">Store stands &amp; displays</span></div>
       </a>
-      <a href="#ch-sculpture" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
+      <a href="#ch-sculpture" onClick="{{ openSvc.sculpture }}" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
         <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="./img_6303-mutqzstd-3doo.jpg" alt="Home sculpture" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 100.0%;"></div>
         <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-accent-700); font-feature-settings:'tnum';">03</span><span style="font-family:var(--font-heading); font-size:20px;">Home sculpture</span></div>
       </a>
-      <a href="#ch-gifts" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
-        <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="assets/photo-gifts-table.jpg" alt="Gift objects" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50% 58%;"></div>
+      <a href="#ch-gifts" onClick="{{ openSvc.gifts }}" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
+        <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="assets/podium-studio.jpg" alt="Gift objects" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50% 50%;"></div>
         <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-accent-700); font-feature-settings:'tnum';">04</span><span style="font-family:var(--font-heading); font-size:20px;">Gift objects</span></div>
       </a>
-      <a href="#ch-events" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
+      <a href="#ch-events" onClick="{{ openSvc.events }}" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
         <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="assets/photo-events-h.webp" alt="Event pieces and pop-ups" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 50.0%;"></div>
         <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-accent-700); font-feature-settings:'tnum';">05</span><span style="font-family:var(--font-heading); font-size:20px;">Event pieces &amp; pop-ups</span></div>
       </a>
-      <a href="#ch-brand" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
+      <a href="#ch-brand" onClick="{{ openSvc.brand }}" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
         <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="assets/photo-brand-sketch.jpg" alt="One-off brand pieces" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50% 50%;"></div>
         <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-accent-700); font-feature-settings:'tnum';">06</span><span style="font-family:var(--font-heading); font-size:20px;">One-off brand pieces</span></div>
       </a>
@@ -131,10 +131,11 @@ a:hover{color:var(--color-accent-600)}
 <section id="about" data-screen-label="Manifesto" style="scroll-margin-top:64px;">
   <div style="max-width:1440px; margin:0 auto; padding:clamp(56px,9vw,152px) clamp(20px,5vw,72px); display:flex; flex-wrap:wrap; gap:var(--space-6) clamp(32px,6vw,96px);">
     <div style="flex:1 1 180px; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--color-accent-700); padding-top:.9em;">Manifesto</div>
-    <blockquote data-rv="man" style="flex:999 1 560px; margin:0; font-family:var(--font-heading); font-weight:300; font-size:clamp(26px,3.3vw,50px); line-height:1.22; letter-spacing:-.01em; text-wrap:pretty; opacity:{{ rv.man.op }}; transform:translateY({{ rv.man.ty }}px); transition:opacity 1s ease, transform 1s cubic-bezier(.2,.7,.2,1);">“We created <img src="assets/mold22-logo.png" alt="MOLD.22" style="display:inline-block; height:.58em; width:auto; vertical-align:baseline; margin:0 .12em;"> to bring bold ideas into physical form, pieces that give a space identity, presence, and character. We make furniture for homes, stands for pop ups, chairs for restaurants, statement pieces for stores, and objects that do not quite fit into a category. From the functional to the unexpected, every piece is designed with intention and made to belong to you. <em style="font-style:italic; color:var(--color-accent-700);">If you can dream it, we can shape it, build it, and bring it to life.</em>”</blockquote>
+    <blockquote data-rv="man" style="flex:999 1 560px; margin:0; font-family:var(--font-heading); font-weight:300; font-size:clamp(26px,3.3vw,50px); line-height:1.22; letter-spacing:-.01em; text-wrap:pretty; opacity:{{ rv.man.op }}; transform:translateY({{ rv.man.ty }}px); transition:opacity 1s ease, transform 1s cubic-bezier(.2,.7,.2,1);">“We created <img src="assets/mold22-logo.png" alt="MOLD.22" style="display:inline-block; height:.58em; width:auto; vertical-align:baseline; margin:0 .12em;"> to bring bold ideas into physical form: pieces that give a space identity and character. Furniture for homes, stands for pop ups, chairs for restaurants and objects that do not quite fit a category, each designed with intention and made to belong to you. <em style="font-style:italic; color:var(--color-accent-700);">If you can dream it, we can build it.</em>”</blockquote>
   </div>
 </section>
 
+<sc-if value="{{ svcOpen }}">
 <section id="services" data-screen-label="Services" style="scroll-margin-top:64px; border-top:1px solid var(--color-divider);">
   <div style="max-width:1440px; margin:0 auto; padding:clamp(56px,8vw,128px) clamp(20px,5vw,72px) clamp(32px,4vw,56px); display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:var(--space-6);">
     <div style="flex:1 1 520px;">
@@ -144,22 +145,25 @@ a:hover{color:var(--color-accent-600)}
     <p style="flex:0 1 26em; font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; margin:0; color:var(--color-neutral-800);">Furniture, stands, objects and spaces, each one designed for a single client and made to fit the place it lives. Here are six places to start.</p>
   </div>
 
-  <nav id="chapter-index" aria-label="Services" style="position:sticky; top:64px; z-index:20; background:var(--color-bg); border-top:1px solid var(--color-divider); border-bottom:1px solid var(--color-divider); display:flex; gap:clamp(20px,3vw,40px); overflow-x:auto; padding:0 clamp(20px,5vw,72px); scrollbar-width:none;">
-    <a href="#ch-seating" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:14px 0 13px; font-size:13px; text-decoration:none; white-space:nowrap; color:{{ ix.a0.c }}; border-bottom:1px solid {{ ix.a0.b }}; margin-bottom:-1px;"><span style="font-family:var(--font-heading); font-style:italic; font-size:16px; font-feature-settings:'tnum';">01</span>Seating</a>
+  <nav aria-label="Services" style="position:sticky; top:64px; z-index:20; background:var(--color-bg); border-top:1px solid var(--color-divider); border-bottom:1px solid var(--color-divider); display:flex; align-items:stretch; padding-left:clamp(20px,5vw,72px);">
+    <div id="chapter-index" style="flex:1; min-width:0; display:flex; gap:clamp(20px,3vw,40px); overflow-x:auto; padding-right:16px; scrollbar-width:none;">
+    <a href="#ch-seating" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:14px 0 13px; font-size:13px; text-decoration:none; white-space:nowrap; color:{{ ix.a0.c }}; border-bottom:1px solid {{ ix.a0.b }}; margin-bottom:-1px;"><span style="font-family:var(--font-heading); font-style:italic; font-size:16px; font-feature-settings:'tnum';">01</span>Furniture</a>
     <a href="#ch-stands" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:14px 0 13px; font-size:13px; text-decoration:none; white-space:nowrap; color:{{ ix.a1.c }}; border-bottom:1px solid {{ ix.a1.b }}; margin-bottom:-1px;"><span style="font-family:var(--font-heading); font-style:italic; font-size:16px; font-feature-settings:'tnum';">02</span>Stands</a>
     <a href="#ch-sculpture" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:14px 0 13px; font-size:13px; text-decoration:none; white-space:nowrap; color:{{ ix.a2.c }}; border-bottom:1px solid {{ ix.a2.b }}; margin-bottom:-1px;"><span style="font-family:var(--font-heading); font-style:italic; font-size:16px; font-feature-settings:'tnum';">03</span>Sculpture</a>
     <a href="#ch-gifts" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:14px 0 13px; font-size:13px; text-decoration:none; white-space:nowrap; color:{{ ix.a3.c }}; border-bottom:1px solid {{ ix.a3.b }}; margin-bottom:-1px;"><span style="font-family:var(--font-heading); font-style:italic; font-size:16px; font-feature-settings:'tnum';">04</span>Gifts</a>
     <a href="#ch-events" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:14px 0 13px; font-size:13px; text-decoration:none; white-space:nowrap; color:{{ ix.a4.c }}; border-bottom:1px solid {{ ix.a4.b }}; margin-bottom:-1px;"><span style="font-family:var(--font-heading); font-style:italic; font-size:16px; font-feature-settings:'tnum';">05</span>Events &amp; pop-ups</a>
     <a href="#ch-brand" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:14px 0 13px; font-size:13px; text-decoration:none; white-space:nowrap; color:{{ ix.a5.c }}; border-bottom:1px solid {{ ix.a5.b }}; margin-bottom:-1px;"><span style="font-family:var(--font-heading); font-style:italic; font-size:16px; font-feature-settings:'tnum';">06</span>Brand pieces</a>
+    </div>
+    <button type="button" onClick="{{ closeSvc }}" aria-label="Close services" style="flex:none; display:flex; align-items:center; gap:6px; min-height:46px; padding:0 clamp(20px,5vw,72px) 0 16px; border:0; border-left:1px solid var(--color-divider); background:var(--color-bg); font-family:var(--font-body); font-size:13px; color:var(--color-neutral-800); cursor:pointer;" style-hover="color:var(--color-accent-700)">Close<svg viewBox="0 0 24 24" aria-hidden="true" style="width:15px; height:15px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round;"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
   </nav>
 
   <div style="max-width:1440px; margin:0 auto; padding:0 clamp(20px,5vw,72px);">
 
-    <article id="ch-seating" data-chapter="0" data-screen-label="01 Seating" style="scroll-margin-top:112px; min-height:calc(100svh - 112px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,420px),1fr)); gap:clamp(32px,6vw,112px); align-items:center; align-content:center; padding:clamp(48px,7vw,112px) 0; border-bottom:1px solid var(--color-divider);">
-      <div data-rv="seating" style="display:flex; flex-direction:column; gap:var(--space-4); opacity:{{ rv.seating.op }}; transform:translateY({{ rv.seating.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
+    <article id="ch-seating" data-rv="seating" data-chapter="0" data-screen-label="01 Furniture" style="scroll-margin-top:112px; min-height:calc(100svh - 112px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,420px),1fr)); gap:clamp(32px,6vw,112px); align-items:center; align-content:center; padding:clamp(48px,7vw,112px) 0; border-bottom:1px solid var(--color-divider);">
+      <div style="display:flex; flex-direction:column; gap:var(--space-4); opacity:{{ rv.seating.op }}; transform:translateY({{ rv.seating.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
         <div style="font-family:var(--font-heading); font-style:italic; font-weight:300; font-size:clamp(88px,12vw,190px); line-height:.8; color:var(--color-accent); font-feature-settings:'tnum';">01</div>
         <div style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--color-accent-700);">For restaurants, cafés and bars</div>
-        <h3 style="font-weight:400; font-size:clamp(36px,4.4vw,64px); line-height:1.02; margin:0;">Restaurant chairs &amp; seating</h3>
+        <h3 style="font-weight:400; font-size:clamp(36px,4.4vw,64px); line-height:1.02; margin:0;">Furniture pieces</h3>
         <p style="font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; max-width:34em; margin:0;">Chairs, stools and banquettes drawn around your room, your menu and how long you want guests to stay. Made in the numbers you need and built for daily service.</p>
         <div style="display:flex; flex-wrap:wrap; gap:var(--space-2);">
           <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Dining chairs</span>
@@ -174,14 +178,14 @@ a:hover{color:var(--color-accent-600)}
       </div>
     </article>
 
-    <article id="ch-stands" data-chapter="1" data-screen-label="02 Stands" style="scroll-margin-top:112px; min-height:calc(100svh - 112px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,420px),1fr)); gap:clamp(32px,6vw,112px); align-items:center; align-content:center; padding:clamp(48px,7vw,112px) 0; border-bottom:1px solid var(--color-divider);">
+    <article id="ch-stands" data-rv="stands" data-chapter="1" data-screen-label="02 Stands" style="scroll-margin-top:112px; min-height:calc(100svh - 112px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,420px),1fr)); gap:clamp(32px,6vw,112px); align-items:center; align-content:center; padding:clamp(48px,7vw,112px) 0; border-bottom:1px solid var(--color-divider);">
       <figure style="margin:0; display:flex; flex-direction:column; gap:var(--space-2);">
         <div class="plate" style="position:relative; width:min(100%, 62svh); margin-inline:auto; aspect-ratio:4/5; overflow:hidden; clip-path:inset(0 0 {{ rv.stands.clip }}% 0); transition:clip-path 1.2s cubic-bezier(.6,0,.2,1);">
           <img src="assets/work-curves-store.jpg" alt="Stands" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 50.0%;">
         </div>
         <figcaption style="font-size:12px; color:var(--color-neutral-700); margin:0;">Curved display stands for Sole.22 Footwear</figcaption>
       </figure>
-      <div data-rv="stands" style="display:flex; flex-direction:column; gap:var(--space-4); opacity:{{ rv.stands.op }}; transform:translateY({{ rv.stands.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
+      <div style="display:flex; flex-direction:column; gap:var(--space-4); opacity:{{ rv.stands.op }}; transform:translateY({{ rv.stands.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
         <div style="font-family:var(--font-heading); font-style:italic; font-weight:300; font-size:clamp(88px,12vw,190px); line-height:.8; color:var(--color-accent); font-feature-settings:'tnum';">02</div>
         <div style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--color-accent-700);">For shops, showrooms and brands</div>
         <h3 style="font-weight:400; font-size:clamp(36px,4.4vw,64px); line-height:1.02; margin:0;">Store stands &amp; displays</h3>
@@ -196,8 +200,8 @@ a:hover{color:var(--color-accent-600)}
       </div>
     </article>
 
-    <article id="ch-sculpture" data-chapter="2" data-screen-label="03 Sculpture" style="scroll-margin-top:112px; min-height:calc(100svh - 112px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,420px),1fr)); gap:clamp(32px,6vw,112px); align-items:center; align-content:center; padding:clamp(48px,7vw,112px) 0; border-bottom:1px solid var(--color-divider);">
-      <div data-rv="sculpture" style="display:flex; flex-direction:column; gap:var(--space-4); opacity:{{ rv.sculpture.op }}; transform:translateY({{ rv.sculpture.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
+    <article id="ch-sculpture" data-rv="sculpture" data-chapter="2" data-screen-label="03 Sculpture" style="scroll-margin-top:112px; min-height:calc(100svh - 112px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,420px),1fr)); gap:clamp(32px,6vw,112px); align-items:center; align-content:center; padding:clamp(48px,7vw,112px) 0; border-bottom:1px solid var(--color-divider);">
+      <div style="display:flex; flex-direction:column; gap:var(--space-4); opacity:{{ rv.sculpture.op }}; transform:translateY({{ rv.sculpture.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
         <div style="font-family:var(--font-heading); font-style:italic; font-weight:300; font-size:clamp(88px,12vw,190px); line-height:.8; color:var(--color-accent); font-feature-settings:'tnum';">03</div>
         <div style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--color-accent-700);">For homes, gardens and collectors</div>
         <h3 style="font-weight:400; font-size:clamp(36px,4.4vw,64px); line-height:1.02; margin:0;">Home sculpture</h3>
@@ -215,11 +219,11 @@ a:hover{color:var(--color-accent-600)}
       </div>
     </article>
 
-    <article id="ch-gifts" data-chapter="3" data-screen-label="04 Gifts" style="scroll-margin-top:112px; min-height:calc(100svh - 112px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,420px),1fr)); gap:clamp(32px,6vw,112px); align-items:center; align-content:center; padding:clamp(48px,7vw,112px) 0; border-bottom:1px solid var(--color-divider);">
+    <article id="ch-gifts" data-rv="gifts" data-chapter="3" data-screen-label="04 Gifts" style="scroll-margin-top:112px; min-height:calc(100svh - 112px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,420px),1fr)); gap:clamp(32px,6vw,112px); align-items:center; align-content:center; padding:clamp(48px,7vw,112px) 0; border-bottom:1px solid var(--color-divider);">
       <div class="plate" style="position:relative; width:min(100%, 62svh); margin-inline:auto; aspect-ratio:4/5; overflow:hidden; clip-path:inset(0 0 {{ rv.gifts.clip }}% 0); transition:clip-path 1.2s cubic-bezier(.6,0,.2,1);">
-        <img src="assets/photo-gifts-table.jpg" alt="A gift object" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50% 58%;">
+        <img src="assets/podium-studio.jpg" alt="A gift object" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50% 50%;">
       </div>
-      <div data-rv="gifts" style="display:flex; flex-direction:column; gap:var(--space-4); opacity:{{ rv.gifts.op }}; transform:translateY({{ rv.gifts.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
+      <div style="display:flex; flex-direction:column; gap:var(--space-4); opacity:{{ rv.gifts.op }}; transform:translateY({{ rv.gifts.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
         <div style="font-family:var(--font-heading); font-style:italic; font-weight:300; font-size:clamp(88px,12vw,190px); line-height:.8; color:var(--color-accent); font-feature-settings:'tnum';">04</div>
         <div style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--color-accent-700);">For friends, partners and clients</div>
         <h3 style="font-weight:400; font-size:clamp(36px,4.4vw,64px); line-height:1.02; margin:0;">Gift objects</h3>
@@ -234,8 +238,8 @@ a:hover{color:var(--color-accent-600)}
       </div>
     </article>
 
-    <article id="ch-events" data-chapter="4" data-screen-label="05 Events &amp; pop-ups" style="scroll-margin-top:112px; min-height:calc(100svh - 112px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,420px),1fr)); gap:clamp(32px,6vw,112px); align-items:center; align-content:center; padding:clamp(48px,7vw,112px) 0; border-bottom:1px solid var(--color-divider);">
-      <div data-rv="events" style="display:flex; flex-direction:column; gap:var(--space-4); opacity:{{ rv.events.op }}; transform:translateY({{ rv.events.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
+    <article id="ch-events" data-rv="events" data-chapter="4" data-screen-label="05 Events &amp; pop-ups" style="scroll-margin-top:112px; min-height:calc(100svh - 112px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,420px),1fr)); gap:clamp(32px,6vw,112px); align-items:center; align-content:center; padding:clamp(48px,7vw,112px) 0; border-bottom:1px solid var(--color-divider);">
+      <div style="display:flex; flex-direction:column; gap:var(--space-4); opacity:{{ rv.events.op }}; transform:translateY({{ rv.events.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
         <div style="font-family:var(--font-heading); font-style:italic; font-weight:300; font-size:clamp(88px,12vw,190px); line-height:.8; color:var(--color-accent); font-feature-settings:'tnum';">05</div>
         <div style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--color-accent-700);">For weddings, dinners, launches and brand events</div>
         <h3 style="font-weight:400; font-size:clamp(36px,4.4vw,64px); line-height:1.02; margin:0;">Event pieces</h3>
@@ -269,11 +273,11 @@ a:hover{color:var(--color-accent-600)}
       </div>
     </article>
 
-    <article id="ch-brand" data-chapter="5" data-screen-label="06 Brand pieces" style="scroll-margin-top:112px; min-height:calc(100svh - 112px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,420px),1fr)); gap:clamp(32px,6vw,112px); align-items:center; align-content:center; padding:clamp(48px,7vw,112px) 0;">
+    <article id="ch-brand" data-rv="brand" data-chapter="5" data-screen-label="06 Brand pieces" style="scroll-margin-top:112px; min-height:calc(100svh - 112px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,420px),1fr)); gap:clamp(32px,6vw,112px); align-items:center; align-content:center; padding:clamp(48px,7vw,112px) 0;">
       <div class="plate" style="position:relative; width:min(100%, 62svh); margin-inline:auto; aspect-ratio:4/5; overflow:hidden; clip-path:inset(0 0 {{ rv.brand.clip }}% 0); transition:clip-path 1.2s cubic-bezier(.6,0,.2,1);">
         <img src="assets/photo-brand-h.webp" alt="A brand piece" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:89.8% 50.0%; transform:scale(1.128); transform-origin:50% 44%;">
       </div>
-      <div data-rv="brand" style="display:flex; flex-direction:column; gap:var(--space-4); opacity:{{ rv.brand.op }}; transform:translateY({{ rv.brand.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
+      <div style="display:flex; flex-direction:column; gap:var(--space-4); opacity:{{ rv.brand.op }}; transform:translateY({{ rv.brand.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
         <div style="font-family:var(--font-heading); font-style:italic; font-weight:300; font-size:clamp(88px,12vw,190px); line-height:.8; color:var(--color-accent); font-feature-settings:'tnum';">06</div>
         <div style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--color-accent-700);">For brands with something to say</div>
         <h3 style="font-weight:400; font-size:clamp(36px,4.4vw,64px); line-height:1.02; margin:0;">One-off brand pieces</h3>
@@ -289,6 +293,7 @@ a:hover{color:var(--color-accent-600)}
     </article>
   </div>
 </section>
+</sc-if>
 
 <section id="work" data-screen-label="Work" style="scroll-margin-top:64px; border-top:1px solid var(--color-divider);">
   <div style="max-width:1440px; margin:0 auto; padding:clamp(56px,8vw,128px) clamp(20px,5vw,72px);">
@@ -311,19 +316,19 @@ a:hover{color:var(--color-accent-600)}
       <p style="font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; max-width:40em; margin:0 0 var(--space-6);">Two freestanding display islands with curved, translucent screens and stepped plinths for shoes and bags. Modelled and rendered in 3D, then built and installed in the store.</p>
       <div style="display:flex; gap:var(--space-4); overflow-x:auto; scroll-snap-type:x mandatory; padding:2px 2px var(--space-3); -webkit-overflow-scrolling:touch;">
         <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-sketch.jpg" alt="3D model of the stands on screen" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-sketch.jpg" alt="3D model of the stands on screen" width="1920" height="2464" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
           <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Sketch</figcaption>
         </figure>
         <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-render.jpg" alt="Render of the two curved stands" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-render.jpg" alt="Render of the two curved stands" width="1128" height="792" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
           <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Rendered</figcaption>
         </figure>
         <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-store.jpg" alt="The stands installed in the store" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-store.jpg" alt="The stands installed in the store" width="975" height="1300" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
           <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Installed</figcaption>
         </figure>
         <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-above.jpg" alt="The stands seen from above" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-above.jpg" alt="The stands seen from above" width="1300" height="975" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
           <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">From above</figcaption>
         </figure>
       </div>
@@ -340,15 +345,15 @@ a:hover{color:var(--color-accent-600)}
       <p style="font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; max-width:40em; margin:0 0 var(--space-6);">Three gridded pedestals at stepped heights, carrying the brand mark and the season’s shoes in the shop window.</p>
       <div style="display:flex; gap:var(--space-4); overflow-x:auto; scroll-snap-type:x mandatory; padding:2px 2px var(--space-3); -webkit-overflow-scrolling:touch;">
         <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-pedestals-sketch.jpg" alt="Pencil sketch studies of the three tiled pedestals" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-pedestals-sketch.jpg" alt="Pencil sketch studies of the three tiled pedestals" width="1122" height="1402" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
           <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Sketch</figcaption>
         </figure>
         <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="./b47f4006-1af6-4369-ae0e-413d0821eb7b-mutsn2n3-fqmz.jpg" alt="Render of three tiled pedestals" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="./b47f4006-1af6-4369-ae0e-413d0821eb7b-mutsn2n3-fqmz.jpg" alt="Render of three tiled pedestals" width="1152" height="1214" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
           <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Rendered</figcaption>
         </figure>
         <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-pedestals-window.jpg" alt="The pedestals in the shop window with shoes" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-pedestals-window.jpg" alt="The pedestals in the shop window with shoes" width="975" height="1300" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
           <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">In the window</figcaption>
         </figure>
       </div>
@@ -365,12 +370,16 @@ a:hover{color:var(--color-accent-600)}
       <p style="font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; max-width:40em; margin:0 0 var(--space-6);">A podium with a stained timber body, a dark top and an open shelf. Drawn to the centimetre, then finished in the workshop.</p>
       <div style="display:flex; gap:var(--space-4); overflow-x:auto; scroll-snap-type:x mandatory; padding:2px 2px var(--space-3); -webkit-overflow-scrolling:touch;">
         <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-podium-drawing.jpg" alt="Measured 3D drawing of the podium" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-podium-drawing.jpg" alt="Measured 3D drawing of the podium" width="1039" height="1300" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
           <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Measured drawing</figcaption>
         </figure>
         <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-podium-workshop.jpg" alt="The finished podium in the workshop" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-podium-workshop.jpg" alt="The finished podium in the workshop" width="1039" height="1300" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
           <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Finished in the workshop</figcaption>
+        </figure>
+        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/podium-studio.jpg" alt="The finished podium side table" width="1122" height="1402" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Finished</figcaption>
         </figure>
       </div>
     </div>
@@ -406,7 +415,7 @@ a:hover{color:var(--color-accent-600)}
   </div>
 </section>
 
-<section id="dream" data-screen-label="Dream it" style="scroll-margin-top:64px; background:color-mix(in srgb, var(--color-neutral-900) 78%, black); color:var(--color-bg);">
+<section id="dream" data-screen-label="Dream it" style="scroll-margin-top:64px; background-color:var(--color-neutral-900); background-image:linear-gradient(color-mix(in srgb, black 22%, transparent), color-mix(in srgb, black 22%, transparent)); color:var(--color-bg);">
   <div style="max-width:1440px; margin:0 auto; padding:clamp(72px,9vw,152px) clamp(20px,5vw,72px);">
     <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:var(--space-6);">
       <div style="flex:1 1 520px;">
@@ -551,7 +560,7 @@ a:hover{color:var(--color-accent-600)}
   </div>
 </section>
 
-<footer id="contact" data-screen-label="Contact" style="scroll-margin-top:64px; background:color-mix(in srgb, var(--color-neutral-900) 78%, black); color:var(--color-bg);">
+<footer id="contact" data-screen-label="Contact" style="scroll-margin-top:64px; background-color:var(--color-neutral-900); background-image:linear-gradient(color-mix(in srgb, black 22%, transparent), color-mix(in srgb, black 22%, transparent)); color:var(--color-bg);">
   <div style="max-width:1440px; margin:0 auto; padding:clamp(72px,9vw,152px) clamp(20px,5vw,72px) var(--space-6);">
     <div style="font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--color-accent-300); margin-bottom:var(--space-3);">Contact</div>
     <h2 style="font-weight:300; font-size:clamp(44px,7vw,120px); line-height:.98; letter-spacing:-.02em; margin:0 0 clamp(40px,6vw,88px); color:var(--color-bg); max-width:12em;">Tell us what <em style="font-style:italic; color:var(--color-accent-300);">you’re dreaming of.</em></h2>
@@ -587,7 +596,7 @@ a:hover{color:var(--color-accent-600)}
 <script type="text/x-dc" data-dc-script data-props="{&quot;email&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;hana.kghazi@gmail.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;instagram&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;mold22.co&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;+20 1064778304&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;bookingUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://cal.com/mold.22&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;heroSeconds&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:3,&quot;min&quot;:1.5,&quot;max&quot;:8,&quot;step&quot;:0.5,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
 class Component extends DCLogic {
   SV = [
-    { key: 'seating', n: '01', title: 'Restaurant chairs & seating', ho: 'a chair', hp: 'your restaurant', obj: 'a set of chairs', place: 'my restaurant' },
+    { key: 'seating', n: '01', title: 'Furniture pieces', ho: 'a chair', hp: 'your restaurant', obj: 'a set of chairs', place: 'my restaurant' },
     { key: 'stands', n: '02', title: 'Store stands & displays', ho: 'a stand', hp: 'your store', obj: 'a display stand', place: 'my store' },
     { key: 'sculpture', n: '03', title: 'Home sculpture', ho: 'a sculpture', hp: 'your home', obj: 'a sculpture', place: 'my home' },
     { key: 'gifts', n: '04', title: 'Gift objects', ho: 'a gift', hp: 'a friend', obj: 'a gift', place: 'a friend' },
@@ -619,7 +628,7 @@ class Component extends DCLogic {
   state = {
     w: typeof window !== 'undefined' ? window.innerWidth : 1280,
     hero: 0, heroFade: false, heroHold: false,
-    menu: false, chapter: 0, rv: {}, scrolled: false, faq: -1,
+    menu: false, chapter: 0, rv: {}, scrolled: false, faq: -1, svcOpen: false,
     picks: { obj: 'a set of chairs', place: 'my restaurant', material: 'wood', mood: 'copper arcs', qty: 'a handful', timing: 'within two to three months' },
     step: 'obj', name: '', email: '', phone: '', notes: '', sent: false, err: ''
   };
@@ -673,6 +682,23 @@ class Component extends DCLogic {
     }
     if (changed || ch !== this.state.chapter || scrolled !== this.state.scrolled) this.setState({ rv, chapter: ch, scrolled });
   }
+  openSvc(key, e) {
+    if (e && e.preventDefault) e.preventDefault();
+    if (!this.state.svcOpen) this._from = window.scrollY;
+    this.setState(st => ({ svcOpen: true, menu: false, rv: key ? { ...st.rv, [key]: true } : st.rv }), () => requestAnimationFrame(() => {
+      const el = document.getElementById(key ? 'ch-' + key : 'services');
+      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - (key ? 112 : 64), behavior: 'smooth' });
+      setTimeout(() => this.measure(), 120);
+    }));
+  }
+  closeSvc() {
+    const y = this._from;
+    this.setState({ svcOpen: false }, () => requestAnimationFrame(() => {
+      const w = document.getElementById('work');
+      window.scrollTo({ top: y != null ? y : (w ? w.getBoundingClientRect().top + window.scrollY - 64 : 0), behavior: 'auto' });
+      this.measure();
+    }));
+  }
   pick(k, v) {
     const i = this.STEPS.indexOf(k);
     this.setState(st => ({ picks: { ...st.picks, [k]: v }, step: i < this.STEPS.length - 1 ? this.STEPS[i + 1] : 'details', err: '' }));
@@ -696,9 +722,12 @@ class Component extends DCLogic {
     const narrow = s.w < 820;
     const H = this.SV[s.hero];
 
-    const slat = {}, slatIn = {}, slatTap = {}, ix = {}, dream = {};
+    const slat = {}, slatIn = {}, slatTap = {}, slatGo = {}, ix = {}, dream = {};
+    const openSvc = { all: (e) => this.openSvc(null, e) };
     this.SV.forEach((sv, i) => {
       slat['s' + i] = i === s.hero ? (narrow ? 9 : 7) : 1;
+      slatGo['s' + i] = (e) => this.openSvc(sv.key, e);
+      openSvc[sv.key] = (e) => this.openSvc(sv.key, e);
       slatIn['s' + i] = () => { this.setState({ heroHold: true }); this.setHero(i); };
       slatTap['s' + i] = (e) => {
         if (this._target !== i || this.state.hero !== i) {
@@ -776,7 +805,9 @@ class Component extends DCLogic {
       heroObj: H.ho, heroPlace: H.hp, heroNum: H.n, heroTitle: H.title, heroHref: '#ch-' + H.key,
       heroOp: s.heroFade ? 0 : 1, heroTy: s.heroFade ? 10 : 0,
       h1Min: narrow ? '4.1em' : '2.05em',
-      slat, slatIn, slatTap,
+      slat, slatIn, slatTap, slatGo, openSvc,
+      heroGo: (e) => this.openSvc(H.key, e),
+      svcOpen: s.svcOpen, closeSvc: () => this.closeSvc(),
       slatOut: () => this.setState({ heroHold: false }),
 
       rv, ix, dream, faqO, faqT, faqR,
