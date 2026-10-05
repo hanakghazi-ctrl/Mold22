@@ -28,9 +28,8 @@ a:hover{color:var(--color-accent-600)}
     <nav style="display:flex; gap:var(--space-6); align-items:center;">
       <a href="#services" onClick="{{ openSvc.all }}" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">Services</a>
       <a href="#process" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">Process</a>
-      <a href="#work" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">Work</a>
+      <a href="#work" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">Previous work</a>
       <a href="#materials" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">Materials</a>
-      <a href="#faq" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">FAQ</a>
       <a href="#contact" style="color:var(--color-bg); text-decoration:none; font-size:14px; letter-spacing:.02em; text-shadow:0 1px 3px color-mix(in srgb, var(--color-neutral-900) 60%, transparent);" style-hover="color:var(--color-accent-200)">Contact</a>
     </nav>
     <a class="btn btn-primary" href="#dream" style="white-space:nowrap; flex:none; color:var(--color-bg); border-color:color-mix(in srgb, var(--color-bg) 80%, transparent);">Start a brief</a>
@@ -47,10 +46,9 @@ a:hover{color:var(--color-accent-600)}
   <div style="position:fixed; top:64px; left:0; right:0; bottom:0; z-index:49; background:var(--color-bg); padding:var(--space-6) 20px; display:flex; flex-direction:column; overflow-y:auto;">
     <a href="#services" onClick="{{ openSvc.all }}" style="font-family:var(--font-heading); font-size:36px; color:var(--color-text); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">Services</a>
     <a href="#process" onClick="{{ closeMenu }}" style="font-family:var(--font-heading); font-size:36px; color:var(--color-text); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">Process</a>
-    <a href="#work" onClick="{{ closeMenu }}" style="font-family:var(--font-heading); font-size:36px; color:var(--color-text); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">Work</a>
+    <a href="#work" onClick="{{ closeMenu }}" style="font-family:var(--font-heading); font-size:36px; color:var(--color-text); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">Previous work</a>
     <a href="#dream" onClick="{{ closeMenu }}" style="font-family:var(--font-heading); font-size:36px; font-style:italic; color:var(--color-accent-700); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">Dream it</a>
     <a href="#materials" onClick="{{ closeMenu }}" style="font-family:var(--font-heading); font-size:36px; color:var(--color-text); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">Materials</a>
-    <a href="#faq" onClick="{{ closeMenu }}" style="font-family:var(--font-heading); font-size:36px; color:var(--color-text); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">FAQ</a>
     <a href="#contact" onClick="{{ closeMenu }}" style="font-family:var(--font-heading); font-size:36px; color:var(--color-text); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--color-divider);">Contact</a>
   </div>
 </sc-if>
@@ -80,14 +78,13 @@ a:hover{color:var(--color-accent-600)}
   <div onMouseLeave="{{ slatOut }}" style="display:flex; gap:6px; height:clamp(320px,54svh,640px); margin-top:clamp(32px,4vw,56px);">
     <div onMouseEnter="{{ slatIn.s0 }}" onClick="{{ slatGo.s0 }}" style="position:relative; cursor:pointer; min-width:0; flex:{{ slat.s0 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/work-curves-store.jpg" alt="Stands photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 78.9%;"></div>
     <div onMouseEnter="{{ slatIn.s1 }}" onClick="{{ slatGo.s1 }}" style="position:relative; cursor:pointer; min-width:0; flex:{{ slat.s1 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="./img_6005-mutqs86i-woh5.jpg" alt="Seating photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 96.1%;"></div>
-    <div onMouseEnter="{{ slatIn.s2 }}" onClick="{{ slatGo.s2 }}" style="position:relative; cursor:pointer; min-width:0; flex:{{ slat.s2 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="./img_6303-mutqzstd-3doo.jpg" alt="Sculpture photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 96.3%;"></div>
+    <div onMouseEnter="{{ slatIn.s2 }}" onClick="{{ slatGo.s2 }}" style="position:relative; cursor:pointer; min-width:0; flex:{{ slat.s2 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/sculpture-v3.jpg" alt="Home sculpture" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50% 40%;"></div>
     <div onMouseEnter="{{ slatIn.s3 }}" onClick="{{ slatGo.s3 }}" style="position:relative; cursor:pointer; min-width:0; flex:{{ slat.s3 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/gifts-finished.jpg" alt="Gift objects" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50% 56%;"></div>
     <div onMouseEnter="{{ slatIn.s4 }}" onClick="{{ slatGo.s4 }}" style="position:relative; cursor:pointer; min-width:0; flex:{{ slat.s4 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/photo-events-h.webp" alt="Event photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 64.5%;"></div>
     <div onMouseEnter="{{ slatIn.s5 }}" onClick="{{ slatGo.s5 }}" style="position:relative; cursor:pointer; min-width:0; flex:{{ slat.s5 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/photo-brand-sketch.jpg" alt="Brand piece sketch" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:62% 52%;"></div>
   </div>
   <div style="display:flex; justify-content:space-between; align-items:baseline; gap:var(--space-4); padding:var(--space-3) 0; border-bottom:1px solid var(--color-divider);">
     <div style="display:flex; align-items:baseline; gap:var(--space-3); min-width:0;">
-      <span style="font-family:var(--font-heading); font-style:italic; font-size:22px; color:var(--color-accent-700); font-feature-settings:'tnum';">{{ heroNum }}</span>
       <span style="font-family:var(--font-heading); font-size:22px;">{{ heroTitle }}</span>
     </div>
     <a href="{{ heroHref }}" onClick="{{ heroGo }}" style="flex:none; display:inline-flex; align-items:center; gap:6px; font-size:14px; text-decoration:none;">Explore
@@ -96,33 +93,33 @@ a:hover{color:var(--color-accent-600)}
   </div>
   </sc-if>
   <sc-if value="{{ isNarrow }}">
-    <div style="display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; margin:32px calc(-1 * clamp(20px,5vw,72px)) 0; padding:0 clamp(20px,5vw,72px) 12px; scrollbar-width:none; -webkit-overflow-scrolling:touch;">
+    <div id="hero-cards" style="display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; margin:32px calc(-1 * clamp(20px,5vw,72px)) 0; padding:0 clamp(20px,5vw,72px) 12px; scrollbar-width:none; -webkit-overflow-scrolling:touch;">
       <a href="#ch-stands" onClick="{{ openSvc.stands }}" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
         <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="assets/work-curves-store.jpg" alt="Store stands and displays" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 100.0%;"></div>
-        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-accent-700); font-feature-settings:'tnum';">01</span><span style="font-family:var(--font-heading); font-size:20px;">Store stands &amp; displays</span></div>
+        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-size:20px;">Store stands &amp; displays</span></div>
       </a>
       <a href="#ch-seating" onClick="{{ openSvc.seating }}" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
         <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="./img_6005-mutqs86i-woh5.jpg" alt="Furniture pieces" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 50.0%;"></div>
-        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-accent-700); font-feature-settings:'tnum';">02</span><span style="font-family:var(--font-heading); font-size:20px;">Furniture pieces</span></div>
+        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-size:20px;">Furniture pieces</span></div>
       </a>
       <a href="#ch-sculpture" onClick="{{ openSvc.sculpture }}" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
-        <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="./img_6303-mutqzstd-3doo.jpg" alt="Home sculpture" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 100.0%;"></div>
-        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-accent-700); font-feature-settings:'tnum';">03</span><span style="font-family:var(--font-heading); font-size:20px;">Home sculpture</span></div>
+        <div class="plate" style="position:relative; aspect-ratio:732/878; overflow:hidden;"><img src="assets/sculpture-v3.jpg" alt="Home sculpture" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover;"></div>
+        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-size:20px;">Home sculpture</span></div>
       </a>
       <a href="#ch-gifts" onClick="{{ openSvc.gifts }}" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
         <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="assets/gifts-finished.jpg" alt="Gift objects" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50% 56%;"></div>
-        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-accent-700); font-feature-settings:'tnum';">04</span><span style="font-family:var(--font-heading); font-size:20px;">Gift objects</span></div>
+        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-size:20px;">Gift objects</span></div>
       </a>
       <a href="#ch-events" onClick="{{ openSvc.events }}" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
         <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="assets/photo-events-h.webp" alt="Event pieces and pop-ups" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 50.0%;"></div>
-        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-accent-700); font-feature-settings:'tnum';">05</span><span style="font-family:var(--font-heading); font-size:20px;">Event pieces &amp; pop-ups</span></div>
+        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-size:20px;">Event pieces &amp; pop-ups</span></div>
       </a>
       <a href="#ch-brand" onClick="{{ openSvc.brand }}" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
         <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="assets/photo-brand-sketch.jpg" alt="One-off brand pieces" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50% 50%;"></div>
-        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-accent-700); font-feature-settings:'tnum';">06</span><span style="font-family:var(--font-heading); font-size:20px;">One-off brand pieces</span></div>
+        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-size:20px;">One-off brand pieces</span></div>
       </a>
     </div>
-    <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--color-neutral-700); padding-top:4px;">Swipe to see all six</div>
+    <div style="display:flex; justify-content:flex-end; padding-top:4px;"><button type="button" class="btn btn-secondary btn-icon" onClick="{{ heroCardsNext }}" aria-label="Next" style="width:46px; height:46px; padding:0; justify-content:center;"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button></div>
   </sc-if>
 </section>
 
@@ -212,8 +209,8 @@ a:hover{color:var(--color-accent-600)}
         </div>
         <div style="display:flex; margin-top:var(--space-2);"><a class="btn btn-primary" href="#dream" onClick="{{ dream.sculpture }}" style="font-size:15px; padding:12px 18px;">Dream one up <svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
       </div>
-      <div class="plate" style="position:relative; width:min(100%, 62svh); margin-inline:auto; aspect-ratio:4/5; overflow:hidden; clip-path:inset(0 0 {{ rv.sculpture.clip }}% 0); transition:clip-path 1.2s cubic-bezier(.6,0,.2,1);">
-        <img src="assets/photo-sculpture-c.webp" alt="A sculpture" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 100.0%;">
+      <div class="plate" style="position:relative; width:min(100%, 62svh); margin-inline:auto; aspect-ratio:732/878; overflow:hidden; clip-path:inset(0 0 {{ rv.sculpture.clip }}% 0); transition:clip-path 1.2s cubic-bezier(.6,0,.2,1);">
+        <img src="assets/sculpture-v3.jpg" alt="A sculpture" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover;">
       </div>
     </article>
 
@@ -409,7 +406,6 @@ a:hover{color:var(--color-accent-600)}
       </div>
       <div style="display:flex; align-items:center; gap:var(--space-3); margin-top:var(--space-3);">
         <div style="flex:1; height:1px; background:var(--color-divider); position:relative; overflow:hidden;"><div style="position:absolute; top:0; bottom:0; left:{{ wkBarL }}%; width:{{ wkBarW }}%; background:var(--color-accent); transition:left .15s linear;"></div></div>
-        <span style="flex:none; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--color-neutral-700); font-feature-settings:'tnum';">{{ wkLabel }}</span>
       </div>
     </div>
   </div>
@@ -526,41 +522,6 @@ a:hover{color:var(--color-accent-600)}
   </div>
 </section>
 
-<section id="faq" data-screen-label="FAQ" style="scroll-margin-top:64px; border-top:1px solid var(--color-divider);">
-  <div style="max-width:1440px; margin:0 auto; padding:clamp(56px,8vw,128px) clamp(20px,5vw,72px); display:flex; flex-wrap:wrap; gap:var(--space-6) clamp(32px,6vw,96px);">
-    <div style="flex:1 1 280px;">
-      <div style="font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--color-accent-700); margin-bottom:var(--space-3);">FAQ</div>
-      <h2 style="font-weight:300; font-size:clamp(40px,5vw,80px); line-height:1; letter-spacing:-.02em; margin:0;">Good <em style="font-style:italic;">questions.</em></h2>
-    </div>
-    <div style="flex:999 1 560px; border-bottom:1px solid var(--color-divider);">
-      <div style="border-top:1px solid var(--color-divider);">
-        <button type="button" onClick="{{ faqT.q0 }}" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:var(--space-4); background:transparent; border:0; padding:var(--space-4) 0; cursor:pointer; text-align:left; font-family:var(--font-heading); font-size:clamp(22px,2.2vw,28px); font-weight:400; color:var(--color-text);" style-hover="color:var(--color-accent-700)">How much does a custom piece cost?<svg viewBox="0 0 24 24" aria-hidden="true" style="flex:none; width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; transform:rotate({{ faqR.q0 }}); transition:transform .3s;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button>
-        <sc-if value="{{ faqO.q0 }}"><p style="margin:0; padding:0 0 var(--space-4); max-width:38em; font-size:16px; line-height:1.7; color:var(--color-neutral-800);">It depends on size, material and quantity. After the first conversation we send drawings with a quote, so you know the price before anything is made.</p></sc-if>
-      </div>
-      <div style="border-top:1px solid var(--color-divider);">
-        <button type="button" onClick="{{ faqT.q1 }}" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:var(--space-4); background:transparent; border:0; padding:var(--space-4) 0; cursor:pointer; text-align:left; font-family:var(--font-heading); font-size:clamp(22px,2.2vw,28px); font-weight:400; color:var(--color-text);" style-hover="color:var(--color-accent-700)">How long does it take?<svg viewBox="0 0 24 24" aria-hidden="true" style="flex:none; width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; transform:rotate({{ faqR.q1 }}); transition:transform .3s;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button>
-        <sc-if value="{{ faqO.q1 }}"><p style="margin:0; padding:0 0 var(--space-4); max-width:38em; font-size:16px; line-height:1.7; color:var(--color-neutral-800);">A single piece usually takes a few weeks from approved drawings. Larger runs, like seating for a whole restaurant, are scheduled with you at the start.</p></sc-if>
-      </div>
-      <div style="border-top:1px solid var(--color-divider);">
-        <button type="button" onClick="{{ faqT.q2 }}" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:var(--space-4); background:transparent; border:0; padding:var(--space-4) 0; cursor:pointer; text-align:left; font-family:var(--font-heading); font-size:clamp(22px,2.2vw,28px); font-weight:400; color:var(--color-text);" style-hover="color:var(--color-accent-700)">Can I bring my own sketch or reference?<svg viewBox="0 0 24 24" aria-hidden="true" style="flex:none; width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; transform:rotate({{ faqR.q2 }}); transition:transform .3s;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button>
-        <sc-if value="{{ faqO.q2 }}"><p style="margin:0; padding:0 0 var(--space-4); max-width:38em; font-size:16px; line-height:1.7; color:var(--color-neutral-800);">Yes. A napkin sketch, a photo, a moodboard or a single word all work. We turn it into measured drawings.</p></sc-if>
-      </div>
-      <div style="border-top:1px solid var(--color-divider);">
-        <button type="button" onClick="{{ faqT.q3 }}" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:var(--space-4); background:transparent; border:0; padding:var(--space-4) 0; cursor:pointer; text-align:left; font-family:var(--font-heading); font-size:clamp(22px,2.2vw,28px); font-weight:400; color:var(--color-text);" style-hover="color:var(--color-accent-700)">Do you make more than one of something?<svg viewBox="0 0 24 24" aria-hidden="true" style="flex:none; width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; transform:rotate({{ faqR.q3 }}); transition:transform .3s;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button>
-        <sc-if value="{{ faqO.q3 }}"><p style="margin:0; padding:0 0 var(--space-4); max-width:38em; font-size:16px; line-height:1.7; color:var(--color-neutral-800);">Yes. We make single pieces and larger runs, in whatever quantity your project needs.</p></sc-if>
-      </div>
-      <div style="border-top:1px solid var(--color-divider);">
-        <button type="button" onClick="{{ faqT.q4 }}" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:var(--space-4); background:transparent; border:0; padding:var(--space-4) 0; cursor:pointer; text-align:left; font-family:var(--font-heading); font-size:clamp(22px,2.2vw,28px); font-weight:400; color:var(--color-text);" style-hover="color:var(--color-accent-700)">Will I see it before it is made?<svg viewBox="0 0 24 24" aria-hidden="true" style="flex:none; width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; transform:rotate({{ faqR.q4 }}); transition:transform .3s;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button>
-        <sc-if value="{{ faqO.q4 }}"><p style="margin:0; padding:0 0 var(--space-4); max-width:38em; font-size:16px; line-height:1.7; color:var(--color-neutral-800);">You approve 3D drawings and material samples before production starts, and we send progress photos from the workshop.</p></sc-if>
-      </div>
-      <div style="border-top:1px solid var(--color-divider);">
-        <button type="button" onClick="{{ faqT.q5 }}" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:var(--space-4); background:transparent; border:0; padding:var(--space-4) 0; cursor:pointer; text-align:left; font-family:var(--font-heading); font-size:clamp(22px,2.2vw,28px); font-weight:400; color:var(--color-text);" style-hover="color:var(--color-accent-700)">Do you deliver and install?<svg viewBox="0 0 24 24" aria-hidden="true" style="flex:none; width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; transform:rotate({{ faqR.q5 }}); transition:transform .3s;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button>
-        <sc-if value="{{ faqO.q5 }}"><p style="margin:0; padding:0 0 var(--space-4); max-width:38em; font-size:16px; line-height:1.7; color:var(--color-neutral-800);">Yes, we deliver and install. For pieces travelling further, we arrange crating and shipping.</p></sc-if>
-      </div>
-    </div>
-  </div>
-</section>
-
 <footer id="contact" data-screen-label="Contact" style="scroll-margin-top:64px; background-color:var(--color-neutral-900); background-image:linear-gradient(color-mix(in srgb, black 22%, transparent), color-mix(in srgb, black 22%, transparent)); color:var(--color-bg);">
   <div style="max-width:1440px; margin:0 auto; padding:clamp(72px,9vw,152px) clamp(20px,5vw,72px) var(--space-6);">
     <div style="font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--color-accent-300); margin-bottom:var(--space-3);">Contact</div>
@@ -594,7 +555,7 @@ a:hover{color:var(--color-accent-600)}
   </div>
 </footer>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;email&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;mold22.co@gmail.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;instagram&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;mold22.co&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;+20 1064778304&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;bookingUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://cal.com/mold.22&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;heroSeconds&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:3,&quot;min&quot;:1.5,&quot;max&quot;:8,&quot;step&quot;:0.5,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;email&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;mold22.co@gmail.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;instagram&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;mold22.co&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;+20 1064778304&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;bookingUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://cal.com/mold.22&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;heroSeconds&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:2.5,&quot;min&quot;:1.5,&quot;max&quot;:8,&quot;step&quot;:0.5,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
 class Component extends DCLogic {
   SV = [
     { key: 'stands', n: '01', title: 'Store stands & displays', ho: 'a stand', hp: 'your store', obj: 'a display stand', place: 'my store' },
@@ -840,6 +801,12 @@ class Component extends DCLogic {
       h1Min: narrow ? '4.1em' : '2.05em',
       slat, slatIn, slatTap, slatGo, openSvc,
       heroGo: (e) => this.openSvc(H.key, e),
+      heroCardsNext: () => {
+        const el = document.getElementById('hero-cards'); if (!el) return;
+        const c = el.querySelector('a'), step = c ? c.getBoundingClientRect().width + 12 : el.clientWidth * 0.8;
+        if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 4) el.scrollTo({ left: 0, behavior: 'smooth' });
+        else el.scrollBy({ left: step, behavior: 'smooth' });
+      },
       svcOpen: s.svcOpen, closeSvc: () => this.closeSvc(),
       slatOut: () => this.setState({ heroHold: false }),
 
@@ -850,7 +817,6 @@ class Component extends DCLogic {
       wkAtStart: s.wkStart, wkAtEnd: s.wkEnd,
       wkScroll: () => { if (this._wkRaf) return; this._wkRaf = requestAnimationFrame(() => { this._wkRaf = null; this.wkMeasure(); }); },
       wkBarW: (s.wkVis * 100).toFixed(1), wkBarL: (s.wkPos * (1 - s.wkVis) * 100).toFixed(1),
-      wkLabel: 'Project ' + (s.wk + 1) + ' of 3',
 
       picks: s.picks, bs, open, opts, isMood, moodPick, ms,
       notDetails: !isDetails,
