@@ -58,9 +58,7 @@ a:hover{color:var(--color-accent-600)}
 <section id="top" data-screen-label="Hero" style="max-width:1440px; margin:0 auto; padding:calc(64px + clamp(36px,6vw,88px)) clamp(20px,5vw,72px) clamp(48px,6vw,96px);">
   <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:var(--space-3) var(--space-6); align-items:baseline; padding-bottom:var(--space-4); border-bottom:1px solid var(--color-divider);">
     <div style="font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--color-text);">Commissioned objects for spaces with something to say</div>
-    <div style="display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700);">
-      <span>One off pieces for brands</span><span style="width:4px; height:4px; border-radius:50%; background:var(--color-accent);"></span><span>Commercial spaces</span><span style="width:4px; height:4px; border-radius:50%; background:var(--color-accent);"></span><span>Homes</span><span style="width:4px; height:4px; border-radius:50%; background:var(--color-accent);"></span><span>Pop ups</span><span style="width:4px; height:4px; border-radius:50%; background:var(--color-accent);"></span><span>Events</span><span style="width:4px; height:4px; border-radius:50%; background:var(--color-accent);"></span><span>Gifts</span>
-    </div>
+    
   </div>
 
   <h1 style="font-family:var(--font-heading); font-weight:300; font-size:clamp(44px,7.4vw,128px); line-height:.98; letter-spacing:-.02em; margin:clamp(28px,4vw,56px) 0 0; min-height:{{ h1Min }};">
@@ -334,86 +332,84 @@ a:hover{color:var(--color-accent-600)}
       <p style="flex:0 1 26em; font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; margin:0; color:var(--color-neutral-800);">Every piece starts as a conversation and a 3D drawing. These are a few that made it off the screen and into the room.</p>
     </div>
 
-    <div data-rv="w1" style="border-top:1px solid var(--color-divider); padding:var(--space-6) 0 clamp(48px,6vw,88px); opacity:{{ rv.w1.op }}; transform:translateY({{ rv.w1.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
-      <div style="display:flex; flex-wrap:wrap; gap:var(--space-3) var(--space-6); align-items:baseline; justify-content:space-between; margin-bottom:var(--space-4);">
-        <div style="display:flex; gap:var(--space-4); align-items:baseline;">
-          <span style="font-family:var(--font-heading); font-style:italic; font-size:32px; color:var(--color-accent); font-feature-settings:'tnum';">01</span>
-          <h3 style="font-weight:400; font-size:clamp(28px,3vw,44px); margin:0;">Curved display stands</h3>
+    <div data-rv="wk" style="opacity:{{ rv.wk.op }}; transform:translateY({{ rv.wk.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
+      <div style="display:flex; align-items:center; gap:var(--space-4); border-bottom:1px solid var(--color-divider); margin-bottom:var(--space-6);">
+        <div id="work-tabs" role="tablist" aria-label="Projects" style="flex:1 1 0; min-width:0; display:flex; gap:clamp(20px,3vw,44px); overflow-x:auto; scrollbar-width:none;">
+        <button type="button" role="tab" onClick="{{ wkGo.p0 }}" aria-selected="{{ wkT.p0.sel }}" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:12px 0 11px; margin-bottom:-1px; background:transparent; border:0; border-bottom:1px solid {{ wkT.p0.b }}; font-family:var(--font-body); font-size:14px; white-space:nowrap; cursor:pointer; color:{{ wkT.p0.c }}; transition:color .2s, border-color .2s;" style-hover="color:var(--color-accent-700)">Curved display stands</button>
+        <button type="button" role="tab" onClick="{{ wkGo.p1 }}" aria-selected="{{ wkT.p1.sel }}" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:12px 0 11px; margin-bottom:-1px; background:transparent; border:0; border-bottom:1px solid {{ wkT.p1.b }}; font-family:var(--font-body); font-size:14px; white-space:nowrap; cursor:pointer; color:{{ wkT.p1.c }}; transition:color .2s, border-color .2s;" style-hover="color:var(--color-accent-700)">Tiled pedestals</button>
+        <button type="button" role="tab" onClick="{{ wkGo.p2 }}" aria-selected="{{ wkT.p2.sel }}" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:12px 0 11px; margin-bottom:-1px; background:transparent; border:0; border-bottom:1px solid {{ wkT.p2.b }}; font-family:var(--font-body); font-size:14px; white-space:nowrap; cursor:pointer; color:{{ wkT.p2.c }}; transition:color .2s, border-color .2s;" style-hover="color:var(--color-accent-700)">Podium side table</button>
         </div>
-        <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--color-neutral-700);">Sole.22 Footwear · Store displays</div>
-      </div>
-      <p style="font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; max-width:40em; margin:0 0 var(--space-6);">Two freestanding display islands with curved, translucent screens and stepped plinths for shoes and bags. Modelled and rendered in 3D, then built and installed in the store.</p>
-      <div style="display:flex; gap:var(--space-4); overflow-x:auto; scroll-snap-type:x mandatory; padding:2px 2px var(--space-3); -webkit-overflow-scrolling:touch;">
-        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-sketch.jpg" alt="3D model of the stands on screen" width="1920" height="2464" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
-          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Sketch</figcaption>
-        </figure>
-        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-render.jpg" alt="Render of the two curved stands" width="1128" height="792" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
-          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Rendered</figcaption>
-        </figure>
-        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-store.jpg" alt="The stands installed in the store" width="975" height="1300" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
-          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Installed</figcaption>
-        </figure>
-        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-above.jpg" alt="The stands seen from above" width="1300" height="975" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
-          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">From above</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div data-rv="w2" style="border-top:1px solid var(--color-divider); padding:var(--space-6) 0 clamp(48px,6vw,88px); opacity:{{ rv.w2.op }}; transform:translateY({{ rv.w2.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
-      <div style="display:flex; flex-wrap:wrap; gap:var(--space-3) var(--space-6); align-items:baseline; justify-content:space-between; margin-bottom:var(--space-4);">
-        <div style="display:flex; gap:var(--space-4); align-items:baseline;">
-          <span style="font-family:var(--font-heading); font-style:italic; font-size:32px; color:var(--color-accent); font-feature-settings:'tnum';">02</span>
-          <h3 style="font-weight:400; font-size:clamp(28px,3vw,44px); margin:0;">Tiled pedestals</h3>
+        <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+        <div style="flex:none; display:flex; gap:8px; padding:8px 0;">
+          <button type="button" class="btn btn-secondary btn-icon" onClick="{{ wkPrev }}" disabled="{{ wkAtStart }}" aria-label="Previous" style="width:46px; height:46px; padding:0; justify-content:center;"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg></button>
+          <button type="button" class="btn btn-secondary btn-icon" onClick="{{ wkNext }}" disabled="{{ wkAtEnd }}" aria-label="Next" style="width:46px; height:46px; padding:0; justify-content:center;"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
         </div>
-        <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--color-neutral-700);">Sole.22 Footwear · Window display</div>
+        </sc-if>
       </div>
-      <p style="font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; max-width:40em; margin:0 0 var(--space-6);">Three gridded pedestals at stepped heights, carrying the brand mark and the season’s shoes in the shop window.</p>
-      <div style="display:flex; gap:var(--space-4); overflow-x:auto; scroll-snap-type:x mandatory; padding:2px 2px var(--space-3); -webkit-overflow-scrolling:touch;">
-        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-pedestals-sketch.jpg" alt="Pencil sketch studies of the three tiled pedestals" width="1122" height="1402" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
-          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Sketch</figcaption>
-        </figure>
-        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="./b47f4006-1af6-4369-ae0e-413d0821eb7b-mutsn2n3-fqmz.jpg" alt="Render of three tiled pedestals" width="1152" height="1214" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
-          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Rendered</figcaption>
-        </figure>
-        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-pedestals-window.jpg" alt="The pedestals in the shop window with shoes" width="975" height="1300" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
-          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">In the window</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div data-rv="w3" style="border-top:1px solid var(--color-divider); padding:var(--space-6) 0 0; opacity:{{ rv.w3.op }}; transform:translateY({{ rv.w3.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
-      <div style="display:flex; flex-wrap:wrap; gap:var(--space-3) var(--space-6); align-items:baseline; justify-content:space-between; margin-bottom:var(--space-4);">
-        <div style="display:flex; gap:var(--space-4); align-items:baseline;">
-          <span style="font-family:var(--font-heading); font-style:italic; font-size:32px; color:var(--color-accent); font-feature-settings:'tnum';">03</span>
-          <h3 style="font-weight:400; font-size:clamp(28px,3vw,44px); margin:0;">Podium side table</h3>
+      <div id="work-strip" onScroll="{{ wkScroll }}" style="display:flex; align-items:flex-start; gap:var(--space-4); overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-left:clamp(20px,5vw,72px); margin:0 calc(-1 * clamp(20px,5vw,72px)); padding:2px clamp(20px,5vw,72px) var(--space-4); -webkit-overflow-scrolling:touch; scrollbar-width:none;">
+        <div data-wk="0" style="flex:none; width:clamp(260px,26vw,360px); min-height:clamp(260px,34vw,480px); box-sizing:content-box; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-3); padding-right:var(--space-2); ">
+          <h3 style="font-weight:400; font-size:clamp(28px,2.6vw,40px); line-height:1.05; margin:0;">Curved display stands</h3>
+          <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--color-neutral-700);">Sole.22 Footwear · Store displays</div>
+          <p style="font-size:15px; line-height:1.65; margin:0; color:var(--color-neutral-800); text-wrap:pretty;">Two freestanding display islands with curved, translucent screens and stepped plinths for shoes and bags. Modelled and rendered in 3D, then built and installed in the store.</p>
         </div>
-        <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--color-neutral-700);">Commission · One-off object</div>
+          <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-sketch.jpg" alt="3D model of the stands on screen" width="1920" height="2464" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+            <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Sketch</figcaption>
+          </figure>
+          <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-render.jpg" alt="Render of the two curved stands" width="1128" height="792" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+            <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Rendered</figcaption>
+          </figure>
+          <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-store.jpg" alt="The stands installed in the store" width="975" height="1300" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+            <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Installed</figcaption>
+          </figure>
+          <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-curves-above.jpg" alt="The stands seen from above" width="1300" height="975" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+            <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">From above</figcaption>
+          </figure>
+        <div data-wk="1" style="flex:none; width:clamp(260px,26vw,360px); min-height:clamp(260px,34vw,480px); box-sizing:content-box; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-3); padding-right:var(--space-2); border-left:1px solid var(--color-divider); padding-left:clamp(20px,2.4vw,36px); margin-left:clamp(8px,1.6vw,24px);">
+          <h3 style="font-weight:400; font-size:clamp(28px,2.6vw,40px); line-height:1.05; margin:0;">Tiled pedestals</h3>
+          <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--color-neutral-700);">Sole.22 Footwear · Window display</div>
+          <p style="font-size:15px; line-height:1.65; margin:0; color:var(--color-neutral-800); text-wrap:pretty;">Three gridded pedestals at stepped heights, carrying the brand mark and the season’s shoes in the shop window.</p>
+        </div>
+          <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-pedestals-sketch.jpg" alt="Pencil sketch studies of the three tiled pedestals" width="1122" height="1402" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+            <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Sketch</figcaption>
+          </figure>
+          <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="./b47f4006-1af6-4369-ae0e-413d0821eb7b-mutsn2n3-fqmz.jpg" alt="Render of three tiled pedestals" width="1152" height="1214" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+            <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Rendered</figcaption>
+          </figure>
+          <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-pedestals-window.jpg" alt="The pedestals in the shop window with shoes" width="975" height="1300" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+            <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">In the window</figcaption>
+          </figure>
+        <div data-wk="2" style="flex:none; width:clamp(260px,26vw,360px); min-height:clamp(260px,34vw,480px); box-sizing:content-box; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-3); padding-right:var(--space-2); border-left:1px solid var(--color-divider); padding-left:clamp(20px,2.4vw,36px); margin-left:clamp(8px,1.6vw,24px);">
+          <h3 style="font-weight:400; font-size:clamp(28px,2.6vw,40px); line-height:1.05; margin:0;">Podium side table</h3>
+          <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--color-neutral-700);">Commission · One-off object</div>
+          <p style="font-size:15px; line-height:1.65; margin:0; color:var(--color-neutral-800); text-wrap:pretty;">A podium with a stained timber body, a dark top and an open shelf. Drawn to the centimetre, then finished in the workshop.</p>
+        </div>
+          <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-podium-drawing.jpg" alt="Measured 3D drawing of the podium" width="1039" height="1300" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+            <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Measured drawing</figcaption>
+          </figure>
+          <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-podium-unfinished.jpg" alt="The podium in raw MDF, before finishing" width="1200" height="1600" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+            <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">IN PROGRESS</figcaption>
+          </figure>
+          <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-podium-workshop.jpg" alt="The finished podium in the workshop" width="1039" height="1300" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+            <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">FINAL TOUCHES</figcaption>
+          </figure>
+          <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/podium-studio.jpg" alt="The finished podium side table" width="1122" height="1402" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+            <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Finished</figcaption>
+          </figure>
       </div>
-      <p style="font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; max-width:40em; margin:0 0 var(--space-6);">A podium with a stained timber body, a dark top and an open shelf. Drawn to the centimetre, then finished in the workshop.</p>
-      <div style="display:flex; gap:var(--space-4); overflow-x:auto; scroll-snap-type:x mandatory; padding:2px 2px var(--space-3); -webkit-overflow-scrolling:touch;">
-        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-podium-drawing.jpg" alt="Measured 3D drawing of the podium" width="1039" height="1300" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
-          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Measured drawing</figcaption>
-        </figure>
-        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-podium-unfinished.jpg" alt="The podium in raw MDF, before finishing" width="1200" height="1600" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
-          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Unfinished</figcaption>
-        </figure>
-        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/work-podium-workshop.jpg" alt="The finished podium in the workshop" width="1039" height="1300" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
-          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Finished in the workshop</figcaption>
-        </figure>
-        <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
-          <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/podium-studio.jpg" alt="The finished podium side table" width="1122" height="1402" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
-          <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Finished</figcaption>
-        </figure>
+      <div style="display:flex; align-items:center; gap:var(--space-3); margin-top:var(--space-3);">
+        <div style="flex:1; height:1px; background:var(--color-divider); position:relative; overflow:hidden;"><div style="position:absolute; top:0; bottom:0; left:{{ wkBarL }}%; width:{{ wkBarW }}%; background:var(--color-accent); transition:left .15s linear;"></div></div>
+        <span style="flex:none; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--color-neutral-700); font-feature-settings:'tnum';">{{ wkLabel }}</span>
       </div>
     </div>
   </div>
@@ -518,6 +514,7 @@ a:hover{color:var(--color-accent-600)}
       <p style="flex:0 1 24em; font-size:16px; line-height:1.7; margin:0; color:var(--color-neutral-800);">Most pieces combine two or three. If yours needs something that is not on the list, ask us.</p>
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,260px),1fr)); column-gap:clamp(24px,3vw,48px);">
+      <div style="border-top:1px solid var(--color-divider); padding:var(--space-4) 0 var(--space-6);"><h4 style="font-weight:400; font-size:26px; margin:0 0 6px;">Wood</h4><p style="margin:0; font-size:14.5px; line-height:1.6; color:var(--color-neutral-700);">Plywood, MDF and veneers, cut, shaped and finished to order.</p></div>
       <div style="border-top:1px solid var(--color-divider); padding:var(--space-4) 0 var(--space-6);"><h4 style="font-weight:400; font-size:26px; margin:0 0 6px;">Solid timber</h4><p style="margin:0; font-size:14.5px; line-height:1.6; color:var(--color-neutral-700);">Oak, ash, beech and walnut, oiled, stained or lacquered.</p></div>
       <div style="border-top:1px solid var(--color-divider); padding:var(--space-4) 0 var(--space-6);"><h4 style="font-weight:400; font-size:26px; margin:0 0 6px;">Lacquer &amp; paint</h4><p style="margin:0; font-size:14.5px; line-height:1.6; color:var(--color-neutral-700);">Any colour, matched to your brand or your room.</p></div>
       <div style="border-top:1px solid var(--color-divider); padding:var(--space-4) 0 var(--space-6);"><h4 style="font-weight:400; font-size:26px; margin:0 0 6px;">Metal</h4><p style="margin:0; font-size:14.5px; line-height:1.6; color:var(--color-neutral-700);">Steel, aluminium and brass, bent, welded or brushed.</p></div>
@@ -550,7 +547,7 @@ a:hover{color:var(--color-accent-600)}
       </div>
       <div style="border-top:1px solid var(--color-divider);">
         <button type="button" onClick="{{ faqT.q3 }}" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:var(--space-4); background:transparent; border:0; padding:var(--space-4) 0; cursor:pointer; text-align:left; font-family:var(--font-heading); font-size:clamp(22px,2.2vw,28px); font-weight:400; color:var(--color-text);" style-hover="color:var(--color-accent-700)">Do you make more than one of something?<svg viewBox="0 0 24 24" aria-hidden="true" style="flex:none; width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; transform:rotate({{ faqR.q3 }}); transition:transform .3s;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button>
-        <sc-if value="{{ faqO.q3 }}"><p style="margin:0; padding:0 0 var(--space-4); max-width:38em; font-size:16px; line-height:1.7; color:var(--color-neutral-800);">Yes. We make one-offs and small runs, from a single gift to seating for a full room.</p></sc-if>
+        <sc-if value="{{ faqO.q3 }}"><p style="margin:0; padding:0 0 var(--space-4); max-width:38em; font-size:16px; line-height:1.7; color:var(--color-neutral-800);">Yes. We make single pieces and larger runs, in whatever quantity your project needs.</p></sc-if>
       </div>
       <div style="border-top:1px solid var(--color-divider);">
         <button type="button" onClick="{{ faqT.q4 }}" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:var(--space-4); background:transparent; border:0; padding:var(--space-4) 0; cursor:pointer; text-align:left; font-family:var(--font-heading); font-size:clamp(22px,2.2vw,28px); font-weight:400; color:var(--color-text);" style-hover="color:var(--color-accent-700)">Will I see it before it is made?<svg viewBox="0 0 24 24" aria-hidden="true" style="flex:none; width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; transform:rotate({{ faqR.q4 }}); transition:transform .3s;"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button>
@@ -627,12 +624,13 @@ class Component extends DCLogic {
     qty: ['just one', 'a pair', 'a handful', 'ten to fifty', 'more than fifty'],
     timing: ['as soon as possible', 'within two to three months', 'by the end of the season', 'whenever it’s ready']
   };
-  RV = ['man', 'seating', 'stands', 'sculpture', 'gifts', 'events', 'brand', 'w1', 'w2', 'w3', 'proc'];
+  RV = ['man', 'seating', 'stands', 'sculpture', 'gifts', 'events', 'brand', 'wk', 'proc'];
 
   state = {
     w: typeof window !== 'undefined' ? window.innerWidth : 1280,
     hero: 0, heroFade: false, heroHold: false,
     menu: false, chapter: 0, rv: {}, scrolled: false, faq: -1, svcOpen: false,
+    wk: 0, wkStart: true, wkEnd: false, wkPos: 0, wkVis: 0.3,
     picks: { obj: 'a set of chairs', place: 'my restaurant', material: 'wood', mood: 'copper arcs', qty: 'a handful', timing: 'within two to three months' },
     step: 'obj', name: '', email: '', phone: '', notes: '', sent: false, err: ''
   };
@@ -646,10 +644,13 @@ class Component extends DCLogic {
     window.addEventListener('resize', this._resize);
     document.addEventListener('scroll', this._scroll, { capture: true, passive: true });
     this.loop();
-    this._m = setTimeout(() => this.measure(), 80);
+    this._m = setTimeout(() => { this.measure(); this.wkMeasure(); }, 80);
+    this._wkr = () => this.wkMeasure();
+    window.addEventListener('resize', this._wkr);
   }
   componentWillUnmount() {
     window.removeEventListener('resize', this._resize);
+    window.removeEventListener('resize', this._wkr);
     document.removeEventListener('scroll', this._scroll, { capture: true });
     clearTimeout(this._tick); clearTimeout(this._f); clearTimeout(this._m); clearTimeout(this._hold);
   }
@@ -685,6 +686,34 @@ class Component extends DCLogic {
       if (nav && link && nav.scrollWidth > nav.clientWidth) nav.scrollTo({ left: Math.max(0, link.offsetLeft - 24), behavior: 'smooth' });
     }
     if (changed || ch !== this.state.chapter || scrolled !== this.state.scrolled) this.setState({ rv, chapter: ch, scrolled });
+  }
+  wkMeasure() {
+    const el = document.getElementById('work-strip');
+    if (!el) return;
+    const r = el.getBoundingClientRect(), pad = parseFloat(getComputedStyle(el).paddingLeft) || 0;
+    const max = Math.max(1, el.scrollWidth - el.clientWidth);
+    let wk = 0;
+    el.querySelectorAll('[data-wk]').forEach((c, i) => { if (c.getBoundingClientRect().left - r.left - pad < el.clientWidth * 0.5) wk = i; });
+    const end = el.scrollLeft >= max - 4;
+    if (end) wk = el.querySelectorAll('[data-wk]').length - 1;
+    const pos = Math.min(1, el.scrollLeft / max), vis = Math.min(1, el.clientWidth / el.scrollWidth);
+    if (wk !== this.state.wk) {
+      const tabs = document.getElementById('work-tabs'), t = tabs && tabs.children[wk];
+      if (tabs && t && tabs.scrollWidth > tabs.clientWidth) tabs.scrollTo({ left: Math.max(0, t.offsetLeft - tabs.offsetLeft - 16), behavior: 'smooth' });
+    }
+    const st = this.state;
+    if (wk !== st.wk || end !== st.wkEnd || (el.scrollLeft < 4) !== st.wkStart || Math.abs(pos - st.wkPos) > 0.004 || Math.abs(vis - st.wkVis) > 0.01)
+      this.setState({ wk, wkEnd: end, wkStart: el.scrollLeft < 4, wkPos: pos, wkVis: vis });
+  }
+  wkGo(i) {
+    const el = document.getElementById('work-strip'), c = el && el.querySelector('[data-wk="' + i + '"]');
+    if (!c) return;
+    const pad = parseFloat(getComputedStyle(el).paddingLeft) || 0;
+    el.scrollTo({ left: c.getBoundingClientRect().left - el.getBoundingClientRect().left + el.scrollLeft - pad, behavior: 'smooth' });
+  }
+  wkStep(dir) {
+    const el = document.getElementById('work-strip');
+    if (el) el.scrollBy({ left: dir * el.clientWidth * 0.8, behavior: 'smooth' });
   }
   openSvc(key, e) {
     if (e && e.preventDefault) e.preventDefault();
@@ -815,6 +844,13 @@ class Component extends DCLogic {
       slatOut: () => this.setState({ heroHold: false }),
 
       rv, ix, dream, faqO, faqT, faqR,
+      wkT: [0, 1, 2].reduce((o, i) => (o['p' + i] = { c: i === s.wk ? 'var(--color-accent-700)' : 'var(--color-neutral-700)', b: i === s.wk ? 'var(--color-accent)' : 'transparent', sel: i === s.wk ? 'true' : 'false' }, o), {}),
+      wkGo: { p0: () => this.wkGo(0), p1: () => this.wkGo(1), p2: () => this.wkGo(2) },
+      wkPrev: () => this.wkStep(-1), wkNext: () => this.wkStep(1),
+      wkAtStart: s.wkStart, wkAtEnd: s.wkEnd,
+      wkScroll: () => { if (this._wkRaf) return; this._wkRaf = requestAnimationFrame(() => { this._wkRaf = null; this.wkMeasure(); }); },
+      wkBarW: (s.wkVis * 100).toFixed(1), wkBarL: (s.wkPos * (1 - s.wkVis) * 100).toFixed(1),
+      wkLabel: 'Project ' + (s.wk + 1) + ' of 3',
 
       picks: s.picks, bs, open, opts, isMood, moodPick, ms,
       notDetails: !isDetails,
