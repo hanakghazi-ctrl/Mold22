@@ -82,6 +82,7 @@ a:hover{color:var(--color-accent-600)}
     <div onMouseEnter="{{ slatIn.s3 }}" onClick="{{ slatGo.s3 }}" style="position:relative; cursor:pointer; min-width:0; flex:{{ slat.s3 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/gifts-finished.jpg" alt="Gift objects" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50% 56%;"></div>
     <div onMouseEnter="{{ slatIn.s4 }}" onClick="{{ slatGo.s4 }}" style="position:relative; cursor:pointer; min-width:0; flex:{{ slat.s4 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/photo-events-h.webp" alt="Event photo" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50.0% 64.5%;"></div>
     <div onMouseEnter="{{ slatIn.s5 }}" onClick="{{ slatGo.s5 }}" style="position:relative; cursor:pointer; min-width:0; flex:{{ slat.s5 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/photo-brand-sketch.jpg" alt="Brand piece sketch" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:62% 52%;"></div>
+    <div onMouseEnter="{{ slatIn.s6 }}" onClick="{{ slatGo.s6 }}" style="position:relative; cursor:pointer; min-width:0; flex:{{ slat.s6 }} 1 0%; border:4px solid var(--color-surface); outline:1px solid var(--color-divider); overflow:hidden; filter:sepia(.22) saturate(.82) contrast(1.05); transition:flex-grow .8s cubic-bezier(.6,0,.2,1);"><img src="assets/packaging-sole22.jpg" alt="Brand packaging" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50% 50%;"></div>
   </div>
   <div style="display:flex; justify-content:space-between; align-items:baseline; gap:var(--space-4); padding:var(--space-3) 0; border-bottom:1px solid var(--color-divider);">
     <div style="display:flex; align-items:baseline; gap:var(--space-3); min-width:0;">
@@ -118,6 +119,10 @@ a:hover{color:var(--color-accent-600)}
         <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="assets/photo-brand-sketch.jpg" alt="One-off brand pieces" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50% 50%;"></div>
         <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-size:20px;">One-off brand pieces</span></div>
       </a>
+      <a href="#ch-packaging" onClick="{{ openSvc.packaging }}" style="flex:none; width:min(76vw, 340px); scroll-snap-align:center; text-decoration:none; color:var(--color-text); display:flex; flex-direction:column; gap:10px;">
+        <div class="plate" style="position:relative; aspect-ratio:4/5; overflow:hidden;"><img src="assets/packaging-sole22.jpg" alt="Brand packaging" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50% 20%;"></div>
+        <div style="display:flex; gap:8px; align-items:baseline;"><span style="font-family:var(--font-heading); font-size:20px;">Brand packaging</span></div>
+      </a>
     </div>
     <div style="display:flex; justify-content:flex-end; padding-top:4px;"><button type="button" class="btn btn-secondary btn-icon" onClick="{{ heroCardsNext }}" aria-label="Next" style="width:46px; height:46px; padding:0; justify-content:center;"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button></div>
   </sc-if>
@@ -148,6 +153,7 @@ a:hover{color:var(--color-accent-600)}
     <a href="#ch-gifts" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:14px 0 13px; font-size:13px; text-decoration:none; white-space:nowrap; color:{{ ix.a3.c }}; border-bottom:1px solid {{ ix.a3.b }}; margin-bottom:-1px;"><span style="font-family:var(--font-heading); font-style:italic; font-size:16px; font-feature-settings:'tnum';">04</span>Gifts</a>
     <a href="#ch-events" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:14px 0 13px; font-size:13px; text-decoration:none; white-space:nowrap; color:{{ ix.a4.c }}; border-bottom:1px solid {{ ix.a4.b }}; margin-bottom:-1px;"><span style="font-family:var(--font-heading); font-style:italic; font-size:16px; font-feature-settings:'tnum';">05</span>Events &amp; pop-ups</a>
     <a href="#ch-brand" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:14px 0 13px; font-size:13px; text-decoration:none; white-space:nowrap; color:{{ ix.a5.c }}; border-bottom:1px solid {{ ix.a5.b }}; margin-bottom:-1px;"><span style="font-family:var(--font-heading); font-style:italic; font-size:16px; font-feature-settings:'tnum';">06</span>Brand pieces</a>
+    <a href="#ch-packaging" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:14px 0 13px; font-size:13px; text-decoration:none; white-space:nowrap; color:{{ ix.a6.c }}; border-bottom:1px solid {{ ix.a6.b }}; margin-bottom:-1px;"><span style="font-family:var(--font-heading); font-style:italic; font-size:16px; font-feature-settings:'tnum';">07</span>Packaging</a>
     </div>
     <button type="button" onClick="{{ closeSvc }}" aria-label="Close services" style="flex:none; display:flex; align-items:center; gap:6px; min-height:46px; padding:0 clamp(20px,5vw,72px) 0 16px; border:0; border-left:1px solid var(--color-divider); background:var(--color-bg); font-family:var(--font-body); font-size:13px; color:var(--color-neutral-800); cursor:pointer;" style-hover="color:var(--color-accent-700)">Close<svg viewBox="0 0 24 24" aria-hidden="true" style="width:15px; height:15px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round;"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
   </nav>
@@ -286,6 +292,25 @@ a:hover{color:var(--color-accent-600)}
         <div style="display:flex; margin-top:var(--space-2);"><a class="btn btn-primary" href="#dream" onClick="{{ dream.brand }}" style="font-size:15px; padding:12px 18px;">Dream one up <svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
       </div>
     </article>
+
+    <article id="ch-packaging" data-rv="packaging" data-chapter="6" data-screen-label="07 Packaging" style="scroll-margin-top:112px; min-height:calc(100svh - 112px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,420px),1fr)); gap:clamp(32px,6vw,112px); align-items:center; align-content:center; padding:clamp(48px,7vw,112px) 0;">
+      <div style="display:flex; flex-direction:column; gap:var(--space-4); opacity:{{ rv.packaging.op }}; transform:translateY({{ rv.packaging.ty }}px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);">
+        <div style="font-family:var(--font-heading); font-style:italic; font-weight:300; font-size:clamp(88px,12vw,190px); line-height:.8; color:var(--color-accent); font-feature-settings:'tnum';">07</div>
+        <div style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--color-accent-700);">For brands that ship</div>
+        <h3 style="font-weight:400; font-size:clamp(36px,4.4vw,64px); line-height:1.02; margin:0;">Brand packaging</h3>
+        <p style="font-size:16px; line-height:1.7; text-align:justify; hyphens:auto; max-width:34em; margin:0;">Boxes, bags and inserts that carry a brand: rigid boxes, fabric dust bags, printed cards and labels, designed together with the product they hold.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:var(--space-2);">
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Rigid boxes</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Dust bags</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Inserts &amp; cards</span>
+          <span style="font-size:12.5px; padding:5px 12px; border:1px solid var(--color-neutral-300); border-radius:var(--radius-sm); color:var(--color-neutral-800);">Labels</span>
+        </div>
+        <div style="display:flex; margin-top:var(--space-2);"><a class="btn btn-primary" href="#dream" onClick="{{ dream.packaging }}" style="font-size:15px; padding:12px 18px;">Dream one up <svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+      </div>
+      <div class="plate" style="position:relative; width:min(100%, 62svh); margin-inline:auto; aspect-ratio:4/5; overflow:hidden; clip-path:inset(0 0 {{ rv.packaging.clip }}% 0); transition:clip-path 1.2s cubic-bezier(.6,0,.2,1);">
+        <img src="assets/packaging-sole22.jpg" alt="A Sole.22 box, dust bag and card on the workshop table" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:50% 30%;">
+      </div>
+    </article>
   </div>
 </section>
 </sc-if>
@@ -335,6 +360,7 @@ a:hover{color:var(--color-accent-600)}
         <button type="button" role="tab" onClick="{{ wkGo.p0 }}" aria-selected="{{ wkT.p0.sel }}" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:12px 0 11px; margin-bottom:-1px; background:transparent; border:0; border-bottom:1px solid {{ wkT.p0.b }}; font-family:var(--font-body); font-size:14px; white-space:nowrap; cursor:pointer; color:{{ wkT.p0.c }}; transition:color .2s, border-color .2s;" style-hover="color:var(--color-accent-700)">Curved display stands</button>
         <button type="button" role="tab" onClick="{{ wkGo.p1 }}" aria-selected="{{ wkT.p1.sel }}" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:12px 0 11px; margin-bottom:-1px; background:transparent; border:0; border-bottom:1px solid {{ wkT.p1.b }}; font-family:var(--font-body); font-size:14px; white-space:nowrap; cursor:pointer; color:{{ wkT.p1.c }}; transition:color .2s, border-color .2s;" style-hover="color:var(--color-accent-700)">Tiled pedestals</button>
         <button type="button" role="tab" onClick="{{ wkGo.p2 }}" aria-selected="{{ wkT.p2.sel }}" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:12px 0 11px; margin-bottom:-1px; background:transparent; border:0; border-bottom:1px solid {{ wkT.p2.b }}; font-family:var(--font-body); font-size:14px; white-space:nowrap; cursor:pointer; color:{{ wkT.p2.c }}; transition:color .2s, border-color .2s;" style-hover="color:var(--color-accent-700)">Podium side table</button>
+        <button type="button" role="tab" onClick="{{ wkGo.p3 }}" aria-selected="{{ wkT.p3.sel }}" style="flex:none; display:flex; gap:8px; align-items:baseline; padding:12px 0 11px; margin-bottom:-1px; background:transparent; border:0; border-bottom:1px solid {{ wkT.p3.b }}; font-family:var(--font-body); font-size:14px; white-space:nowrap; cursor:pointer; color:{{ wkT.p3.c }}; transition:color .2s, border-color .2s;" style-hover="color:var(--color-accent-700)">Brand packaging</button>
         </div>
         <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
         <div style="flex:none; display:flex; gap:8px; padding:8px 0;">
@@ -402,6 +428,31 @@ a:hover{color:var(--color-accent-600)}
           <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
             <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/podium-studio.jpg" alt="The finished podium side table" width="1122" height="1402" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
             <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Finished</figcaption>
+          </figure>
+        <div data-wk="3" style="flex:none; width:clamp(260px,26vw,360px); min-height:clamp(260px,34vw,480px); box-sizing:content-box; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-3); padding-right:var(--space-2); border-left:1px solid var(--color-divider); padding-left:clamp(20px,2.4vw,36px); margin-left:clamp(8px,1.6vw,24px);">
+          <h3 style="font-weight:400; font-size:clamp(28px,2.6vw,40px); line-height:1.05; margin:0;">Brand packaging</h3>
+          <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--color-neutral-700);">Sole.22 · Footwear</div>
+          <p style="font-size:15px; line-height:1.65; margin:0; color:var(--color-neutral-800); text-wrap:pretty;">A yellow rigid box, a linen drawstring dust bag and a printed card, made for Sole.22’s footwear.</p>
+        </div>
+          <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/pack-sheet.jpg" alt="Sole.22 packaging design sheet: card, box dieline, box top, wrapping paper, dust bag and leather label" width="1086" height="1448" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+            <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Design sheet</figcaption>
+          </figure>
+          <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/pack-box-detail.jpg" alt="Sole.22 shoebox with magnetic lid, close-up" width="1086" height="1448" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+            <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Box detail</figcaption>
+          </figure>
+          <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/pack-studio.jpg" alt="A bigger version of the Sole.22 box on a teal backdrop" width="1024" height="1536" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+            <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Bigger version</figcaption>
+          </figure>
+          <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/packaging-sole22.jpg" alt="Sole.22 box, dust bag and card on the workshop table" width="1024" height="1536" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+            <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Finished</figcaption>
+          </figure>
+          <figure style="flex:none; margin:0; scroll-snap-align:start; display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="plate" style="height:clamp(260px,34vw,480px); width:fit-content;"><img src="assets/pack-production.jpg" alt="A full production run of Sole.22 boxes, stacked and wrapped" width="1200" height="1600" loading="lazy" style="display:block; height:100%; width:auto; max-width:none;"></div>
+            <figcaption style="width:0; min-width:100%; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--color-neutral-700); margin:0;">Production run</figcaption>
           </figure>
       </div>
       <div style="display:flex; align-items:center; gap:var(--space-3); margin-top:var(--space-3);">
@@ -537,7 +588,8 @@ a:hover{color:var(--color-accent-600)}
       </a>
       <a href="{{ waLink }}" target="_blank" rel="noopener" style="display:flex; flex-direction:column; gap:6px; padding:var(--space-4) 0 var(--space-6); border-top:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent); color:var(--color-bg); text-decoration:none;" style-hover="color:var(--color-accent-300)">
         <span style="display:flex; justify-content:space-between; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:color-mix(in srgb, var(--color-bg) 64%, transparent);">WhatsApp<svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span>
-        <span style="font-family:var(--font-heading); font-size:26px; font-feature-settings:'tnum';">{{ waText }}</span>
+        <span style="font-family:var(--font-heading); font-size:26px;">Send us a message</span>
+        <span style="font-size:13px; letter-spacing:.04em; color:color-mix(in srgb, var(--color-bg) 52%, transparent); font-feature-settings:'tnum';">{{ waText }}</span>
       </a>
       <a href="{{ bookHref }}" target="_blank" rel="noopener" style="display:flex; flex-direction:column; gap:6px; padding:var(--space-4) 0 var(--space-6); border-top:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent); color:var(--color-bg); text-decoration:none;" style-hover="color:var(--color-accent-300)">
         <span style="display:flex; justify-content:space-between; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:color-mix(in srgb, var(--color-bg) 64%, transparent);">Book a call<svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span>
@@ -555,7 +607,7 @@ a:hover{color:var(--color-accent-600)}
   </div>
 </footer>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;email&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;mold22.co@gmail.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;instagram&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;mold22.co&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;+20 1064778304&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;bookingUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://cal.com/mold.22&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;heroSeconds&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:2.5,&quot;min&quot;:1.5,&quot;max&quot;:8,&quot;step&quot;:0.5,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;email&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;info@mold22.co&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;instagram&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;mold22.co&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;+20 1064778304&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;bookingUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://cal.com/mold.22&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;heroSeconds&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:2.5,&quot;min&quot;:1.5,&quot;max&quot;:8,&quot;step&quot;:0.5,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
 class Component extends DCLogic {
   SV = [
     { key: 'stands', n: '01', title: 'Store stands & displays', ho: 'a stand', hp: 'your store', obj: 'a display stand', place: 'my store' },
@@ -563,12 +615,13 @@ class Component extends DCLogic {
     { key: 'sculpture', n: '03', title: 'Home sculpture', ho: 'a sculpture', hp: 'your home', obj: 'a sculpture', place: 'my home' },
     { key: 'gifts', n: '04', title: 'Gift objects', ho: 'a gift', hp: 'a friend', obj: 'a gift', place: 'a friend' },
     { key: 'events', n: '05', title: 'Event pieces & pop-ups', ho: 'a centrepiece', hp: 'your event', obj: 'a centrepiece', place: 'my event' },
-    { key: 'brand', n: '06', title: 'One-off brand pieces', ho: 'a one-off piece', hp: 'your brand', obj: 'a one-off piece', place: 'my brand' }
+    { key: 'brand', n: '06', title: 'One-off brand pieces', ho: 'a one-off piece', hp: 'your brand', obj: 'a one-off piece', place: 'my brand' },
+    { key: 'packaging', n: '07', title: 'Brand packaging', ho: 'packaging', hp: 'your brand', obj: 'packaging', place: 'my brand' }
   ];
   STEPS = ['obj', 'place', 'material', 'mood', 'qty', 'timing'];
   PROMPTS = { obj: 'What is it?', place: 'Where will it live?', material: 'What should it be made from?', mood: 'How should it feel?', qty: 'How many?', timing: 'When do you need it?' };
   OPTS = {
-    obj: ['a chair', 'a set of chairs', 'a stool', 'a table', 'a display stand', 'a counter', 'a sculpture', 'a shelf', 'a gift', 'a pop-up stand', 'a centrepiece', 'a one-off piece', 'something new'],
+    obj: ['a chair', 'a set of chairs', 'a stool', 'a table', 'a display stand', 'a counter', 'a sculpture', 'a shelf', 'a gift', 'a pop-up stand', 'a centrepiece', 'a one-off piece', 'packaging', 'something new'],
     place: ['my restaurant', 'my café', 'my store', 'my home', 'my hotel', 'my office', 'my launch', 'my event', 'my brand', 'a friend'],
     material: ['wood', 'lacquered wood', 'metal', 'stone', 'acrylic', 'resin', 'fabric', 'tile', 'a mix', 'whatever suits it'],
     mood: [
@@ -585,7 +638,7 @@ class Component extends DCLogic {
     qty: ['just one', 'a pair', 'a handful', 'ten to fifty', 'more than fifty'],
     timing: ['as soon as possible', 'within two to three months', 'by the end of the season', 'whenever it’s ready']
   };
-  RV = ['man', 'seating', 'stands', 'sculpture', 'gifts', 'events', 'brand', 'wk', 'proc'];
+  RV = ['man', 'seating', 'stands', 'sculpture', 'gifts', 'events', 'brand', 'packaging', 'wk', 'proc'];
 
   state = {
     w: typeof window !== 'undefined' ? window.innerWidth : 1280,
@@ -781,7 +834,7 @@ class Component extends DCLogic {
       };
     });
 
-    const email = (p.email || 'mold22.co@gmail.com').trim();
+    const email = (p.email || 'info@mold22.co').trim();
     const ig = (p.instagram || 'mold22.co').replace(/^@/, '').trim();
     const wa = (p.whatsapp || '+20 1064778304').trim();
     const waDigits = wa.replace(/\D/g, '');
@@ -811,8 +864,8 @@ class Component extends DCLogic {
       slatOut: () => this.setState({ heroHold: false }),
 
       rv, ix, dream, faqO, faqT, faqR,
-      wkT: [0, 1, 2].reduce((o, i) => (o['p' + i] = { c: i === s.wk ? 'var(--color-accent-700)' : 'var(--color-neutral-700)', b: i === s.wk ? 'var(--color-accent)' : 'transparent', sel: i === s.wk ? 'true' : 'false' }, o), {}),
-      wkGo: { p0: () => this.wkGo(0), p1: () => this.wkGo(1), p2: () => this.wkGo(2) },
+      wkT: [0, 1, 2, 3].reduce((o, i) => (o['p' + i] = { c: i === s.wk ? 'var(--color-accent-700)' : 'var(--color-neutral-700)', b: i === s.wk ? 'var(--color-accent)' : 'transparent', sel: i === s.wk ? 'true' : 'false' }, o), {}),
+      wkGo: { p0: () => this.wkGo(0), p1: () => this.wkGo(1), p2: () => this.wkGo(2), p3: () => this.wkGo(3) },
       wkPrev: () => this.wkStep(-1), wkNext: () => this.wkStep(1),
       wkAtStart: s.wkStart, wkAtEnd: s.wkEnd,
       wkScroll: () => { if (this._wkRaf) return; this._wkRaf = requestAnimationFrame(() => { this._wkRaf = null; this.wkMeasure(); }); },
